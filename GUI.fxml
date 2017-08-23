@@ -19,10 +19,9 @@
             <CheckMenuItem mnemonicParsing="false" text="B" />
          </items>
       </MenuButton>
-<<<<<<< HEAD
+
       <AnchorPane layoutY="100.0" prefHeight="620.0" prefWidth="826.0" style="-fx-background-color: grey;" />
       <AnchorPane layoutX="826.0" layoutY="100.0" prefHeight="620.0" prefWidth="414.0" style="-fx-background-color: pink;" />
-=======
       <AnchorPane layoutY="100.0" prefHeight="620.0" prefWidth="826.0" style="-fx-background-color: grey;">
          <children>
             <ToolBar layoutX="79.0" layoutY="59.0" prefHeight="40.0" prefWidth="200.0">
@@ -32,6 +31,5 @@
             </ToolBar>
          </children></AnchorPane>
       <AnchorPane layoutX="826.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
->>>>>>> daae9edb54f4dce64eafc5fb851609042bd7fe0b
    </children>
 </AnchorPane>
