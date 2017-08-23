@@ -19,6 +19,6 @@
          </items>
       </MenuButton>
       <AnchorPane layoutY="100.0" prefHeight="620.0" prefWidth="826.0" style="-fx-background-color: grey;" />
-      <AnchorPane layoutX="826.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane layoutX="826.0" layoutY="100.0" prefHeight="620.0" prefWidth="414.0" style="-fx-background-color: pink;" />
    </children>
 </AnchorPane>
