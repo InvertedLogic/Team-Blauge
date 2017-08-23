@@ -29,6 +29,16 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="365.0">
                <children>
                   <JFXTextField layoutX="92.0" layoutY="77.0" prefHeight="148.0" prefWidth="221.0" />
+                  <Label layoutX="6.0" layoutY="5.0" text="Taskname:" />
+                  <Label layoutX="16.0" layoutY="15.0" text="Autor:" />
+                  <Label layoutX="16.0" layoutY="15.0" text="Status:" />
+                  <Label layoutX="16.0" layoutY="15.0" text="Farbe:" />
+                  <Label layoutX="16.0" layoutY="15.0" text="Beschreibung:" />
+                  <Label layoutX="16.0" layoutY="15.0" text="Tasknamen einfügen" />
+                  <Label layoutX="16.0" layoutY="15.0" text="Kommentare:" />
+                  <Label layoutX="26.0" layoutY="25.0" text="Autor einfügen" />
+                  <Label layoutX="26.0" layoutY="25.0" text="Status Einfügen" />
+                  <Label layoutX="26.0" layoutY="25.0" text="Farbe einfügen" />
                </children>
             </AnchorPane>
         </content>
