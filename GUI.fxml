@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -18,7 +19,19 @@
             <CheckMenuItem mnemonicParsing="false" text="B" />
          </items>
       </MenuButton>
+<<<<<<< HEAD
       <AnchorPane layoutY="100.0" prefHeight="620.0" prefWidth="826.0" style="-fx-background-color: grey;" />
       <AnchorPane layoutX="826.0" layoutY="100.0" prefHeight="620.0" prefWidth="414.0" style="-fx-background-color: pink;" />
+=======
+      <AnchorPane layoutY="100.0" prefHeight="620.0" prefWidth="826.0" style="-fx-background-color: grey;">
+         <children>
+            <ToolBar layoutX="79.0" layoutY="59.0" prefHeight="40.0" prefWidth="200.0">
+              <items>
+                <Button mnemonicParsing="false" text="Fietes Bottom" />
+              </items>
+            </ToolBar>
+         </children></AnchorPane>
+      <AnchorPane layoutX="826.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+>>>>>>> daae9edb54f4dce64eafc5fb851609042bd7fe0b
    </children>
 </AnchorPane>
