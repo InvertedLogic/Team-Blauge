@@ -5,14 +5,9 @@
 
 * Sourcetree herunterladen: https://www.sourcetreeapp.com/
 
-* In Sourcetree unter Tools > Options > Authentification den Bitbucket Account hinzufügen
+* Sobald ihr im GitHub Team seid:
 
-
-* Bei Bitbucket in das Repository gehen und das Repo klonen
-
-oder
-
-* Bei Sourcetree Clone > Remote > Team Blauge (rechts auf klonen)
+* Bei Sourcetree Clone > Url: https://github.com/InvertedLogic/Team-Blauge.github
 
 
 
