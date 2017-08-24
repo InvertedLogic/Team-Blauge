@@ -4,7 +4,7 @@ public class Status {
 	
 	private Status vorgaenger;
 	private Status nachfolger;
-	private enum stati {DOING, DONE, FINISHED}
+	private Stati status;
 	
 	public Status getVorgaenger() {
 		return vorgaenger;
@@ -17,7 +17,12 @@ public class Status {
 	}
 	public void setNachfolger(Status nachfolger) {
 		this.nachfolger = nachfolger;
-	};
-	
+	}
+	public void setStatus(Stati status){
+		this.status = status;
+	}
+	public Stati getStatus(){
+		return this.status;
+	}
 	
 }
