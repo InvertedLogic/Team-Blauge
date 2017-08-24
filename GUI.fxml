@@ -6,6 +6,7 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -29,7 +30,11 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="365.0">
                <children>
                   <JFXTextField layoutX="92.0" layoutY="77.0" prefHeight="148.0" prefWidth="221.0" />
-                  <Label layoutX="6.0" layoutY="5.0" text="Taskname:" />
+                  <Label layoutX="6.0" layoutY="5.0" text="Taskname:">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Label>
                   <Label layoutX="16.0" layoutY="15.0" text="Autor:" />
                   <Label layoutX="16.0" layoutY="15.0" text="Status:" />
                   <Label layoutX="16.0" layoutY="15.0" text="Farbe:" />
