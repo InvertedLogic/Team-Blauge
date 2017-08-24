@@ -4,7 +4,9 @@ public class BasicTest {
 
 	public static void main(String[] args) {
 		
-		// Erstellen eines Users
+		// Erstellen eines Projekt
+		
+		// Erstellen eines User
 		
 		// Erstellen eines Tasks
 		
