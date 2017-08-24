@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -20,33 +17,17 @@
             <CheckMenuItem mnemonicParsing="false" text="B" />
          </items>
       </MenuButton>
-      <ScrollPane layoutY="100.0" prefHeight="620.0" prefWidth="826.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="811.0" />
-        </content>
-      </ScrollPane>
-      <ScrollPane layoutX="860.0" layoutY="100.0" prefHeight="620.0" prefWidth="380.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="365.0">
-               <children>
-                  <JFXTextField layoutX="92.0" layoutY="77.0" prefHeight="148.0" prefWidth="221.0" />
-                  <Label layoutX="6.0" layoutY="5.0" text="Taskname:">
-                     <font>
-                        <Font name="Arial Black" size="15.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="16.0" layoutY="15.0" text="Autor:" />
-                  <Label layoutX="16.0" layoutY="15.0" text="Status:" />
-                  <Label layoutX="16.0" layoutY="15.0" text="Farbe:" />
-                  <Label layoutX="16.0" layoutY="15.0" text="Beschreibung:" />
-                  <Label layoutX="16.0" layoutY="15.0" text="Tasknamen einfügen" />
-                  <Label layoutX="16.0" layoutY="15.0" text="Kommentare:" />
-                  <Label layoutX="26.0" layoutY="25.0" text="Autor einfügen" />
-                  <Label layoutX="26.0" layoutY="25.0" text="Status Einfügen" />
-                  <Label layoutX="26.0" layoutY="25.0" text="Farbe einfügen" />
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
+
+      <AnchorPane layoutY="100.0" prefHeight="620.0" prefWidth="826.0" style="-fx-background-color: grey;" />
+      <AnchorPane layoutX="826.0" layoutY="100.0" prefHeight="620.0" prefWidth="414.0" style="-fx-background-color: pink;" />
+      <AnchorPane layoutY="100.0" prefHeight="620.0" prefWidth="826.0" style="-fx-background-color: grey;">
+         <children>
+            <ToolBar layoutX="79.0" layoutY="59.0" prefHeight="40.0" prefWidth="200.0">
+              <items>
+                <Button mnemonicParsing="false" text="Fietes Bottom" />
+              </items>
+            </ToolBar>
+         </children></AnchorPane>
+      <AnchorPane layoutX="826.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
