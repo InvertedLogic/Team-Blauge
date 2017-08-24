@@ -3,11 +3,11 @@ package model;
 public class Task {
 	
 	private Status status;
-	private char[] name;
+	private String name;
 	private User[] nutzer;
 	private Datum erstellungsDatum;
 	private Datum letzteBewegung;
-	private char[] kommentar;
+	private String kommentar;
 	private int farbe;
 	public Status getStatus() {
 		return status;
@@ -15,10 +15,10 @@ public class Task {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	public char[] getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(char[] name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public User[] getNutzer() {
@@ -39,10 +39,10 @@ public class Task {
 	public void setLetzteBewegung(Datum letzteBewegung) {
 		this.letzteBewegung = letzteBewegung;
 	}
-	public char[] getKommentar() {
+	public String getKommentar() {
 		return kommentar;
 	}
-	public void setKommentar(char[] kommentar) {
+	public void setKommentar(String kommentar) {
 		this.kommentar = kommentar;
 	}
 	public int getFarbe() {
