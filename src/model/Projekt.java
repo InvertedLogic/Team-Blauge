@@ -31,4 +31,12 @@ public class Projekt {
 		Tasks.remove(task.getName());
 	}
 	
+	public void addUserToHashMap(User user){
+		Users.put(user.getName(), user);
+	}
+	
+	public void deleteUserFromHashMap(User user){
+		Users.remove(user.getName());
+	}
+	
 }

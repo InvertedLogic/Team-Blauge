@@ -2,15 +2,21 @@ package model;
 
 public class User {
 	
-	private char name;
+	private String name;
 	private long id;
-	private char[] passwort;
+	private String passwort;
+	
+	public User(String name, long id, String passwort){
+		this.name = name;
+		this.id = id;
+		this.passwort = passwort;
+	}
 	
 	
-	public char getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(char name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public long getId() {
@@ -19,10 +25,10 @@ public class User {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public char[] getPasswort() {
+	public String getPasswort() {
 		return passwort;
 	}
-	public void setPasswort(char[] passwort) {
+	public void setPasswort(String passwort) {
 		this.passwort = passwort;
 	}
 	

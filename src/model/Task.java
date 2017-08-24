@@ -9,6 +9,13 @@ public class Task {
 	private Datum letzteBewegung;
 	private String kommentar;
 	private int farbe;
+	
+	public Task(String name, String kommentar){
+		this.name = name;
+		this.kommentar = kommentar;
+	}
+	
+	
 	public Status getStatus() {
 		return status;
 	}
