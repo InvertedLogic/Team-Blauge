@@ -4,7 +4,7 @@ public class Status {
 	
 	private Status vorgaenger;
 	private Status nachfolger;
-	private Stati status;
+	private Stati status; /* koennte Problem mit der Flexibilitaet geben */
 	
 	public Status getVorgaenger() {
 		return vorgaenger;

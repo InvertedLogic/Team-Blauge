@@ -7,6 +7,11 @@ public class Projekt {
 	private User ersteller;
 	private HashMap<String, Task> Tasks= new HashMap<String, Task>();
 	private HashMap<String, User> Users = new HashMap<String, User>();
+	private String bezeichnung; /* evt. name? */
+
+	public Projekt(User u) {
+		this.ersteller = u;
+	}
 
 	public User getErsteller() {
 		return ersteller;
@@ -23,6 +28,14 @@ public class Projekt {
 		return Users;
 	}
 
+	public String getBezeichnung() {
+		return bezeichnung;
+	}
+
+	public void setBezeichnung(String bezeichnung) {
+		this.bezeichnung = bezeichnung;
+	}
+
 	public void addTaskToHashMap(Task task){
 		Tasks.put(task.getName(), task);
 	}
@@ -37,6 +50,11 @@ public class Projekt {
 	
 	public void deleteUserFromHashMap(User user){
 		Users.remove(user.getName());
+	}
+
+	public void createTask(String name, String kommentar) {
+		Task task = new Task(name,kommentar);
+		this.addTaskToHashMap(task);
 	}
 	
 }
