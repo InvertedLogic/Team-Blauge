@@ -62,7 +62,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
-                              <Image url="@../resources/pricetags.png" />
+                              <Image url="@../resources/Icons/pricetags.png" />
                            </image>
                         </ImageView>
                      </graphic></Label>
@@ -93,7 +93,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
-                              <Image url="@../resources/ios7-chatbubble.png" />
+                              <Image url="@../resources/Icons/ios7-chatbubble.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -108,7 +108,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
-                              <Image url="@../resources/plus-round.png" />
+                              <Image url="@../resources/Icons/plus-round.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -122,7 +122,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
-                              <Image url="@../resources/Forward-512.png" />
+                              <Image url="@../resources/Icons/Forward-512.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -131,5 +131,14 @@
             </AnchorPane>
         </content>
       </ScrollPane>
+      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="330.0" prefHeight="50.0" prefWidth="70.0">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0">
+               <image>
+                  <Image url="@../resources/Icons/ios7-browsers.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>
