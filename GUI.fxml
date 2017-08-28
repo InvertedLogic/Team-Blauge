@@ -74,13 +74,13 @@
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font></Label>
-                  <JFXTextField layoutX="85.0" layoutY="5.0" prefHeight="25.0" prefWidth="260.0">
+                  <JFXTextField focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="25.0" prefWidth="260.0" style="-fx-background-color: white;">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
                   <JFXColorPicker layoutX="85.0" layoutY="155.0" prefHeight="25.0" />
-                  <JFXTextArea layoutX="5.0" layoutY="230.0" prefHeight="150.0" prefWidth="339.0">
+                  <JFXTextArea focusColor="#b71c1c" layoutX="5.0" layoutY="230.0" prefHeight="150.0" prefWidth="339.0">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
@@ -99,7 +99,7 @@
                      </graphic>
                   </Label>
                   <JFXListView layoutX="5.0" layoutY="620.0" prefHeight="100.0" prefWidth="339.0" />
-                  <JFXTextField layoutX="5.0" layoutY="425.0" prefWidth="300.0">
+                  <JFXTextField focusColor="#b71c1c" layoutX="5.0" layoutY="425.0" prefWidth="300.0">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
@@ -113,11 +113,20 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXTextField layoutX="5.0" layoutY="590.0" prefWidth="300.0">
+                  <JFXTextField focusColor="#b71c1c" layoutX="5.0" layoutY="590.0" prefWidth="300.0">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="586.0" prefHeight="25.0" prefWidth="25.0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@src/resources/Forward-512.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
                </children>
             </AnchorPane>
         </content>
