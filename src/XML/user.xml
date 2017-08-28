@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<users>
+
+<user name="Hans">
+<Status>Admin</Status>
+<Projekte>
+<Projekt nummer="0000"></Projekt>
+<Projekt nummer="0001"></Projekt>
+<Projekt nummer="0002"></Projekt>
+</Projekte>
+</user>
+<user name="Peter">
+<Status>normal</Status>
+<Projekte>
+<Projekt nummer="0000"></Projekt>
+<Projekt nummer="0001"></Projekt>
+<Projekt nummer="0003"></Projekt>
+</Projekte>
+</user>
+
+
+
+
+</users>
