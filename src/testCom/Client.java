@@ -1,42 +1,36 @@
 package testCom;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 public class Client {
+	
+	static ComProtocol protocol;
 
 	public static void main( String[] args )
 	  {
 	    Socket server = null;
+	    protocol = new ComProtocol();
 
 	    try
 	    {
 	      server = new Socket( "localhost", 3141 );
-	      Scanner     in  = new Scanner( server.getInputStream() );
+	      InputStream     in  =  server.getInputStream() ;
+	      BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+	      StringBuilder builder = new StringBuilder();
+	      String s = protocol.reqChangeAttrByID(1, "name", "tom", 100);
+	      
 	      PrintWriter out = new PrintWriter( server.getOutputStream(), true );
-
-	      out.println( "functionA(2,5)" );
-	      System.out.println( in.nextLine() );
-	      
-	      server.close();
-
-	      server = new Socket( "localhost", 3141 );
-	      in  = new Scanner( server.getInputStream() );
-	      out = new PrintWriter( server.getOutputStream(), true );
-
-	      out.println( "functionB(2,5)" );
-	      System.out.println( in.nextLine() );
-	      
-	      server.close();
-
-	      server = new Socket( "localhost", 3141 );
-	      in  = new Scanner( server.getInputStream() );
-	      out = new PrintWriter( server.getOutputStream(), true );
-
-	      out.println( "functionC(2,2)" );
-	      System.out.println( in.nextLine() );
+	      out.println(s);
+	      String line;
+	      while((line=reader.readLine())!=null) {
+	    	  builder.append(line);
+	      }
+	      System.out.println(builder.toString());
 	    }
 	    catch ( UnknownHostException e ) {
 	      e.printStackTrace();
