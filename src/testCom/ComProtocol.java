@@ -4,14 +4,27 @@ import java.awt.List;
 
 public class ComProtocol {
 
+	/**
+	 * 
+	 * @param int id -> id des zu ändernden objekts
+	 * @param String attr -> zu änderndes attribut des objekts
+	 * @param String value -> zu schreibender wert in das attribut
+	 * @param int timeStamp -> zeitstempel der letzten aktualisierung
+	 * @return String str -> anfrage von client an server
+	 */
 	public String reqChangeAttrByID(int id, String attr, String value, int timeStamp) {
 		String str = null;
 		str = "changeAttrByID(" + id + "," + attr + "," + value + "," + timeStamp + ")";
 		return str;
 	}
 
+	/**
+	 * 
+	 * @param String str -> anfrage von client
+	 * @return Request req -> objekt mit attributen der anfrage
+	 */
 	public Request valChangeAttrByID(String str) {
-		Request l = null;
+		Request req = null;
 		String s = str.split("\\(")[1];
 		String id = s.split("\\,")[0];
 		String attr = s.split("\\,")[1];
@@ -19,8 +32,8 @@ public class ComProtocol {
 		s = s.split("\\,")[3];
 		String time = s.substring(0, s.length() - 1);
 
-		l = new Request(Integer.valueOf(id), attr, val, Integer.valueOf(time));
+		req = new Request(Integer.valueOf(id), attr, val, Integer.valueOf(time));
 
-		return l;
+		return req;
 	}
 }
