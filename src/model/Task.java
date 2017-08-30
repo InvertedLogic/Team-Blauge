@@ -59,6 +59,50 @@ public class Task {
 		this.farbe = farbe;
 	}
 	
+	/**
+	 * method to move a task forward
+	 * 
+	 */
+	public void taskNachVorne()
+	{
+		/**
+		 * Task can be moved by any user
+		 */
+		Status temp;
+		temp = this.getStatus().getNachfolger().getNachfolger();
+		if(this.getStatus().getNachfolger() != null)
+		{
+			this.getStatus().setVorgaenger(this.status);
+			this.setStatus(this.getStatus().getNachfolger());
+			this.getStatus().setNachfolger(temp);
+		}
+		else
+		{
+			System.out.println("ERROR: Task already in last status.");
+		}
+	}
 	
+	/**
+	 * method to move a task backward
+	 * 
+	 */
+	public void taskNachHinten()
+	{
+		/**
+		 * TODO: Implement admin-only in this method
+		 */
+		Status temp;
+		temp = this.getStatus().getVorgaenger().getVorgaenger();
+		if(this.getStatus().getVorgaenger() != null)
+		{
+			this.getStatus().setNachfolger(this.getStatus());
+			this.setStatus(this.getStatus().getVorgaenger());
+			this.getStatus().setVorgaenger(temp);
+		}
+		else
+		{
+			System.out.println("ERROR: Task already in first status.");
+		}
+	}
 	
 }
