@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<projects count="0">
-	<project>
-		<name>Testprojekt</name>
+<projects count="2">
+	<project name="Testprojekt 1">
+		<name>Testprojekt 1</name>
 		<lastmod>2017-08-30T08:45:00</lastmod>
 		<description>Das ist ein Testprojekt!</description>
 		<key>Testkey!</key>
+		<userlist>
+			<user>tingarah</user>
+			<user>meiselst</user>
+		</userlist>
+	</project>
+	<project name="Testprojekt 2">
+		<name>Testprojekt 2</name>
+		<lastmod>2017-08-30T08:46:00</lastmod>
+		<description>Das ist das zweite Testprojekt!</description>
+		<key>Testkey2!</key>
 		<userlist>
 			<user>tingarah</user>
 			<user>meiselst</user>

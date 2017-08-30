@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/projektschema"
-	xmlns:tns="http://www.example.org/projektschema" elementFormDefault="qualified">
-
-	<element name="projects" type="tns:project"></element>
-	<attribute name="count" type="int"></attribute>
-
-	<complexType name="project">
-		<sequence>
-			<element name="name" type="string"></element>
-			<element name="lastmod" type="dateTime"></element>
-			<element name="description" type="string"></element>
-			<element name="key" type="string"></element>
-			<sequence>
-				<element name="userlist" type="string"></element>
-			</sequence>
-		</sequence>
-	</complexType>
-
-</schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="projects">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="project" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string"></xs:element>
+							<xs:element name="lastmod" type="xs:dateTime"></xs:element>
+							<xs:element name="description" type="xs:string"></xs:element>
+							<xs:element name="key" type="xs:string"></xs:element>
+							<xs:element name="userlist">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="user" maxOccurs="unbounded" type="xs:string"></xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="projectname" type="xs:string"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="count" type="xs:int"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

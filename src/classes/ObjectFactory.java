@@ -2,16 +2,13 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2017.08.30 um 10:16:21 AM CEST 
+// Generiert: 2017.08.30 um 11:15:03 AM CEST 
 //
 
 
 package classes;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
-import javax.xml.namespace.QName;
 
 
 /**
@@ -31,7 +28,6 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Projects_QNAME = new QName("http://www.example.org/projektschema", "projects");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: classes
@@ -41,20 +37,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Project }
+     * Create an instance of {@link Projects }
      * 
      */
-    public Project createProject() {
-        return new Project();
+    public Projects createProjects() {
+        return new Projects();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Project }{@code >}}
+     * Create an instance of {@link Projects.Project }
      * 
      */
-    @XmlElementDecl(namespace = "http://www.example.org/projektschema", name = "projects")
-    public JAXBElement<Project> createProjects(Project value) {
-        return new JAXBElement<Project>(_Projects_QNAME, Project.class, null, value);
+    public Projects.Project createProjectsProject() {
+        return new Projects.Project();
+    }
+
+    /**
+     * Create an instance of {@link Projects.Project.Userlist }
+     * 
+     */
+    public Projects.Project.Userlist createProjectsProjectUserlist() {
+        return new Projects.Project.Userlist();
     }
 
 }
