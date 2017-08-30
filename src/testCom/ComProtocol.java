@@ -26,10 +26,11 @@ public class ComProtocol {
 	public Request valChangeAttrByID(String str) {
 		Request req = null;
 		String s = str.split("\\(")[1];
-		String id = s.split("\\,")[0];
-		String attr = s.split("\\,")[1];
-		String val = s.split("\\,")[2];
-		s = s.split("\\,")[3];
+		String s1[] = s.split("\\,");
+		String id = s1[0];
+		String attr = s1[1];
+		String val = s1[2];
+		s = s1[3];
 		String time = s.substring(0, s.length() - 1);
 
 		req = new Request(Integer.valueOf(id), attr, val, Integer.valueOf(time));
