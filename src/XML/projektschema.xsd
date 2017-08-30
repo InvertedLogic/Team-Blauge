@@ -11,13 +11,12 @@
     <complexType name="project">
     	<sequence>
     		<element name="name" type="string"></element>
-    		<element name="date" type="dateTime"></element>
-    		<element name="version" type="int"></element>
-    		<element name="comment" type="string"></element>
-    		<element name="user" type="string" maxOccurs="unbounded"
-    			minOccurs="0">
-    		</element>
+    		<element name="lastmod" type="dateTime"></element>
+    		<element name="description" type="string"></element>
     		<element name="key" type="string"></element>
+    		<sequence>
+    			<element name="userlist" type="string"></element>
+    		</sequence>
     	</sequence>
     </complexType>
 </schema>
