@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2017.08.30 um 11:15:03 AM CEST 
+// Generiert: 2017.08.30 um 12:03:12 PM CEST 
 //
 
 
@@ -35,11 +35,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="projectname" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                   &lt;element name="lastmod" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
  *                   &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                   &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="userlist">
+ *                   &lt;element name="users">
  *                     &lt;complexType>
  *                       &lt;complexContent>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -51,7 +51,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                     &lt;/complexType>
  *                   &lt;/element>
  *                 &lt;/sequence>
- *                 &lt;attribute name="projectname" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *                 &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
  *               &lt;/restriction>
  *             &lt;/complexContent>
  *           &lt;/complexType>
@@ -141,11 +141,11 @@ public class Projects {
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="projectname" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *         &lt;element name="lastmod" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
      *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *         &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="userlist">
+     *         &lt;element name="users">
      *           &lt;complexType>
      *             &lt;complexContent>
      *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -157,7 +157,7 @@ public class Projects {
      *           &lt;/complexType>
      *         &lt;/element>
      *       &lt;/sequence>
-     *       &lt;attribute name="projectname" type="{http://www.w3.org/2001/XMLSchema}string" />
+     *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
      *     &lt;/restriction>
      *   &lt;/complexContent>
      * &lt;/complexType>
@@ -167,16 +167,16 @@ public class Projects {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "name",
+        "projectname",
         "lastmod",
         "description",
         "key",
-        "userlist"
+        "users"
     })
     public static class Project {
 
         @XmlElement(required = true)
-        protected String name;
+        protected String projectname;
         @XmlElement(required = true)
         @XmlSchemaType(name = "dateTime")
         protected XMLGregorianCalendar lastmod;
@@ -185,32 +185,32 @@ public class Projects {
         @XmlElement(required = true)
         protected String key;
         @XmlElement(required = true)
-        protected Projects.Project.Userlist userlist;
-        @XmlAttribute(name = "projectname")
-        protected String projectname;
+        protected Projects.Project.Users users;
+        @XmlAttribute(name = "name")
+        protected String name;
 
         /**
-         * Ruft den Wert der name-Eigenschaft ab.
+         * Ruft den Wert der projectname-Eigenschaft ab.
          * 
          * @return
          *     possible object is
          *     {@link String }
          *     
          */
-        public String getName() {
-            return name;
+        public String getProjectname() {
+            return projectname;
         }
 
         /**
-         * Legt den Wert der name-Eigenschaft fest.
+         * Legt den Wert der projectname-Eigenschaft fest.
          * 
          * @param value
          *     allowed object is
          *     {@link String }
          *     
          */
-        public void setName(String value) {
-            this.name = value;
+        public void setProjectname(String value) {
+            this.projectname = value;
         }
 
         /**
@@ -286,51 +286,51 @@ public class Projects {
         }
 
         /**
-         * Ruft den Wert der userlist-Eigenschaft ab.
+         * Ruft den Wert der users-Eigenschaft ab.
          * 
          * @return
          *     possible object is
-         *     {@link Projects.Project.Userlist }
+         *     {@link Projects.Project.Users }
          *     
          */
-        public Projects.Project.Userlist getUserlist() {
-            return userlist;
+        public Projects.Project.Users getUsers() {
+            return users;
         }
 
         /**
-         * Legt den Wert der userlist-Eigenschaft fest.
+         * Legt den Wert der users-Eigenschaft fest.
          * 
          * @param value
          *     allowed object is
-         *     {@link Projects.Project.Userlist }
+         *     {@link Projects.Project.Users }
          *     
          */
-        public void setUserlist(Projects.Project.Userlist value) {
-            this.userlist = value;
+        public void setUsers(Projects.Project.Users value) {
+            this.users = value;
         }
 
         /**
-         * Ruft den Wert der projectname-Eigenschaft ab.
+         * Ruft den Wert der name-Eigenschaft ab.
          * 
          * @return
          *     possible object is
          *     {@link String }
          *     
          */
-        public String getProjectname() {
-            return projectname;
+        public String getName() {
+            return name;
         }
 
         /**
-         * Legt den Wert der projectname-Eigenschaft fest.
+         * Legt den Wert der name-Eigenschaft fest.
          * 
          * @param value
          *     allowed object is
          *     {@link String }
          *     
          */
-        public void setProjectname(String value) {
-            this.projectname = value;
+        public void setName(String value) {
+            this.name = value;
         }
 
 
@@ -357,7 +357,7 @@ public class Projects {
         @XmlType(name = "", propOrder = {
             "user"
         })
-        public static class Userlist {
+        public static class Users {
 
             @XmlElement(required = true)
             protected List<String> user;
