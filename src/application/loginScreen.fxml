@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1260.0" minHeight="720.0" minWidth="1260.0" prefHeight="720.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LogInController">
+<AnchorPane maxHeight="720.0" maxWidth="1260.0" minHeight="720.0" minWidth="1260.0" prefHeight="720.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
       <JFXTextField layoutX="520.0" layoutY="201.0" prefWidth="200.0" promptText="Benutzername" AnchorPane.topAnchor="299.0">
          <font>
@@ -19,7 +19,7 @@
          <font>
             <Font name="Roboto Light" size="13.0" />
          </font></JFXPasswordField>
-      <JFXButton fx:id="btn_logIn" contentDisplay="RIGHT" layoutX="633.0" layoutY="306.0" prefHeight="34.0" prefWidth="87.0" text=" Login" textAlignment="RIGHT" AnchorPane.topAnchor="400.0">
+      <JFXButton fx:id="btn_LogIn" contentDisplay="RIGHT" layoutX="633.0" layoutY="306.0" onAction="#logInHandler" prefHeight="34.0" prefWidth="87.0" text=" Login" textAlignment="RIGHT" AnchorPane.topAnchor="400.0">
          <graphic>
             <ImageView fitHeight="24.0" fitWidth="24.0">
                <image>
