@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Projekt {
@@ -8,6 +9,7 @@ public class Projekt {
 	private HashMap<String, Task> Tasks= new HashMap<String, Task>();
 	private HashMap<String, User> Users = new HashMap<String, User>();
 	private String bezeichnung; /* evt. name? */
+	private ArrayList<Status> statusliste;
 
 	public Projekt(User u) {
 		this.ersteller = u;
