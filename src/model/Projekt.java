@@ -6,13 +6,16 @@ import java.util.HashMap;
 public class Projekt {
 	
 	private User ersteller;
-	private HashMap<String, Task> Tasks= new HashMap<String, Task>();
-	private HashMap<String, User> Users = new HashMap<String, User>();
+	private HashMap<String, Task> tasks= new HashMap<String, Task>();
+	private HashMap<String, User> users = new HashMap<String, User>();
 	private String bezeichnung; /* evt. name? */
 	private ArrayList<Status> statusliste;
 
-	public Projekt(User u) {
+	public Projekt(User u, String bezeichnung) {
 		this.ersteller = u;
+		this.bezeichnung = bezeichnung;
+		users.put(u.getName(), u);
+		
 	}
 
 	public User getErsteller() {
@@ -23,11 +26,11 @@ public class Projekt {
 		this.ersteller = ersteller;
 	}
 	public HashMap<String, Task> getTasks() {
-		return Tasks;
+		return tasks;
 	}
 
 	public HashMap<String, User> getUsers() {
-		return Users;
+		return users;
 	}
 
 	public String getBezeichnung() {
@@ -39,19 +42,19 @@ public class Projekt {
 	}
 
 	public void addTaskToHashMap(Task task){
-		Tasks.put(task.getName(), task);
+		tasks.put(task.getName(), task);
 	}
 	
 	public void deleteTaskFromHashMap(Task task){
-		Tasks.remove(task.getName());
+		tasks.remove(task.getName());
 	}
 	
 	public void addUserToHashMap(User user){
-		Users.put(user.getName(), user);
+		users.put(user.getName(), user);
 	}
 	
 	public void deleteUserFromHashMap(User user){
-		Users.remove(user.getName());
+		users.remove(user.getName());
 	}
 
 	public void createTask(String name, String kommentar) {
