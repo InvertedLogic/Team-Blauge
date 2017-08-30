@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/projektschema"
+	xmlns:tns="http://www.example.org/projektschema" elementFormDefault="qualified">
+
+	<element name="projects" type="tns:project"></element>
+	<attribute name="count" type="int"></attribute>
+
+	<complexType name="project">
+		<sequence>
+			<element name="name" type="string"></element>
+			<element name="lastmod" type="dateTime"></element>
+			<element name="description" type="string"></element>
+			<element name="key" type="string"></element>
+			<sequence>
+				<element name="userlist" type="string"></element>
+			</sequence>
+		</sequence>
+	</complexType>
+
+</schema>
