@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:projects xmlns:tns="http://www.example.org/projektschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/projektschema projectlist_schema.xsd ">
+  <tns:name>tns:name</tns:name>
+  <tns:lastmod>2001-12-31T12:00:00</tns:lastmod>
+  <tns:description>tns:description</tns:description>
+  <tns:key>tns:key</tns:key>
+  <tns:userlist>tns:userlist</tns:userlist>
+</tns:projects>
