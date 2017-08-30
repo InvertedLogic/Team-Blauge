@@ -30,6 +30,7 @@ public class Test_Statusliste {
 		testing = new Status("testing");
 		list.insertStatus(toDo);
 		list.insertStatus(doing);
+		list.insertStatus(finished);
 	}
 	
 	@Test
@@ -40,9 +41,9 @@ public class Test_Statusliste {
 	
 	@Test
 	public void insertStatusTest() {
-		assertFalse(list.search(finished));
-		list.insertStatus(finished);
-		assertTrue(list.search(finished));
+		assertFalse(list.search(testing));
+		list.insertStatus(testing);
+		assertTrue(list.search(testing));
 	}
 	
 	@Test
@@ -53,11 +54,5 @@ public class Test_Statusliste {
 		assertTrue(doing == testing.getVorgaenger());
 		assertTrue(finished == testing.getNachfolger());
 	}
-	
-	/*
-	@Test
-	public void getAll() {
-		Faile
-	}*/
 
 }

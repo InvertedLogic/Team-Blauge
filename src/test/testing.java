@@ -14,5 +14,7 @@ public class testing {
 		list.insertStatus(doing);
 		list.insertStatus(finished);
 		list.insertBetween(toDo, start, doing);
+		
+		System.out.println(list.getAll());
 	}
 }

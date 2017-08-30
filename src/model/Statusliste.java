@@ -57,11 +57,17 @@ public class Statusliste {
 	 * @param nachf
 	 */
 	public void insertBetween(Status status, Status vorg, Status nachf) {
-		if (this.search(vorg)&&this.search(nachf)) {
-			status.setVorgaenger(vorg);
-			status.setNachfolger(nachf);
-			vorg.setNachfolger(status);
-			nachf.setVorgaenger(status);
+		if (this.search(vorg) && this.search(nachf)) {
+			Status lauf = this.head;
+			while(lauf != null && !lauf.equals(vorg)) {
+				lauf = lauf.getNachfolger();
+			}
+			if(lauf.equals(vorg)) {
+				status.setNachfolger(nachf);
+				nachf.setVorgaenger(status);
+				status.setVorgaenger(lauf);
+				lauf.setNachfolger(status);
+			}
 		}		
 	}
 
