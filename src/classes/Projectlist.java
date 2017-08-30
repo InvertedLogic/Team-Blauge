@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2017.08.30 um 12:03:12 PM CEST 
+// Generiert: 2017.08.30 um 12:59:38 PM CEST 
 //
 
 
@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 
@@ -30,7 +31,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="project" maxOccurs="unbounded">
+ *         &lt;element name="project" maxOccurs="unbounded" minOccurs="0">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -39,19 +40,28 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                   &lt;element name="lastmod" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
  *                   &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                   &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="users">
+ *                   &lt;element name="userlist">
  *                     &lt;complexType>
  *                       &lt;complexContent>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                           &lt;sequence>
- *                             &lt;element name="user" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+ *                             &lt;element name="user" maxOccurs="unbounded" minOccurs="0">
+ *                               &lt;complexType>
+ *                                 &lt;simpleContent>
+ *                                   &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+ *                                     &lt;attribute name="isAdmin" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+ *                                   &lt;/extension>
+ *                                 &lt;/simpleContent>
+ *                               &lt;/complexType>
+ *                             &lt;/element>
  *                           &lt;/sequence>
+ *                           &lt;attribute name="count" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *                         &lt;/restriction>
  *                       &lt;/complexContent>
  *                     &lt;/complexType>
  *                   &lt;/element>
  *                 &lt;/sequence>
- *                 &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *                 &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
  *               &lt;/restriction>
  *             &lt;/complexContent>
  *           &lt;/complexType>
@@ -69,11 +79,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "", propOrder = {
     "project"
 })
-@XmlRootElement(name = "projects")
-public class Projects {
+@XmlRootElement(name = "projectlist")
+public class Projectlist {
 
-    @XmlElement(required = true)
-    protected List<Projects.Project> project;
+    protected List<Projectlist.Project> project;
     @XmlAttribute(name = "count")
     protected Integer count;
 
@@ -95,13 +104,13 @@ public class Projects {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Projects.Project }
+     * {@link Projectlist.Project }
      * 
      * 
      */
-    public List<Projects.Project> getProject() {
+    public List<Projectlist.Project> getProject() {
         if (project == null) {
-            project = new ArrayList<Projects.Project>();
+            project = new ArrayList<Projectlist.Project>();
         }
         return this.project;
     }
@@ -145,19 +154,28 @@ public class Projects {
      *         &lt;element name="lastmod" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
      *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *         &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="users">
+     *         &lt;element name="userlist">
      *           &lt;complexType>
      *             &lt;complexContent>
      *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *                 &lt;sequence>
-     *                   &lt;element name="user" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+     *                   &lt;element name="user" maxOccurs="unbounded" minOccurs="0">
+     *                     &lt;complexType>
+     *                       &lt;simpleContent>
+     *                         &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+     *                           &lt;attribute name="isAdmin" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+     *                         &lt;/extension>
+     *                       &lt;/simpleContent>
+     *                     &lt;/complexType>
+     *                   &lt;/element>
      *                 &lt;/sequence>
+     *                 &lt;attribute name="count" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
      *               &lt;/restriction>
      *             &lt;/complexContent>
      *           &lt;/complexType>
      *         &lt;/element>
      *       &lt;/sequence>
-     *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
+     *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
      *     &lt;/restriction>
      *   &lt;/complexContent>
      * &lt;/complexType>
@@ -171,7 +189,7 @@ public class Projects {
         "lastmod",
         "description",
         "key",
-        "users"
+        "userlist"
     })
     public static class Project {
 
@@ -185,8 +203,8 @@ public class Projects {
         @XmlElement(required = true)
         protected String key;
         @XmlElement(required = true)
-        protected Projects.Project.Users users;
-        @XmlAttribute(name = "name")
+        protected Projectlist.Project.Userlist userlist;
+        @XmlAttribute(name = "name", required = true)
         protected String name;
 
         /**
@@ -286,27 +304,27 @@ public class Projects {
         }
 
         /**
-         * Ruft den Wert der users-Eigenschaft ab.
+         * Ruft den Wert der userlist-Eigenschaft ab.
          * 
          * @return
          *     possible object is
-         *     {@link Projects.Project.Users }
+         *     {@link Projectlist.Project.Userlist }
          *     
          */
-        public Projects.Project.Users getUsers() {
-            return users;
+        public Projectlist.Project.Userlist getUserlist() {
+            return userlist;
         }
 
         /**
-         * Legt den Wert der users-Eigenschaft fest.
+         * Legt den Wert der userlist-Eigenschaft fest.
          * 
          * @param value
          *     allowed object is
-         *     {@link Projects.Project.Users }
+         *     {@link Projectlist.Project.Userlist }
          *     
          */
-        public void setUsers(Projects.Project.Users value) {
-            this.users = value;
+        public void setUserlist(Projectlist.Project.Userlist value) {
+            this.userlist = value;
         }
 
         /**
@@ -344,8 +362,17 @@ public class Projects {
          *   &lt;complexContent>
          *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
          *       &lt;sequence>
-         *         &lt;element name="user" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+         *         &lt;element name="user" maxOccurs="unbounded" minOccurs="0">
+         *           &lt;complexType>
+         *             &lt;simpleContent>
+         *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+         *                 &lt;attribute name="isAdmin" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+         *               &lt;/extension>
+         *             &lt;/simpleContent>
+         *           &lt;/complexType>
+         *         &lt;/element>
          *       &lt;/sequence>
+         *       &lt;attribute name="count" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
          *     &lt;/restriction>
          *   &lt;/complexContent>
          * &lt;/complexType>
@@ -357,10 +384,11 @@ public class Projects {
         @XmlType(name = "", propOrder = {
             "user"
         })
-        public static class Users {
+        public static class Userlist {
 
-            @XmlElement(required = true)
-            protected List<String> user;
+            protected List<Projectlist.Project.Userlist.User> user;
+            @XmlAttribute(name = "count", required = true)
+            protected int count;
 
             /**
              * Gets the value of the user property.
@@ -380,15 +408,102 @@ public class Projects {
              * 
              * <p>
              * Objects of the following type(s) are allowed in the list
-             * {@link String }
+             * {@link Projectlist.Project.Userlist.User }
              * 
              * 
              */
-            public List<String> getUser() {
+            public List<Projectlist.Project.Userlist.User> getUser() {
                 if (user == null) {
-                    user = new ArrayList<String>();
+                    user = new ArrayList<Projectlist.Project.Userlist.User>();
                 }
                 return this.user;
+            }
+
+            /**
+             * Ruft den Wert der count-Eigenschaft ab.
+             * 
+             */
+            public int getCount() {
+                return count;
+            }
+
+            /**
+             * Legt den Wert der count-Eigenschaft fest.
+             * 
+             */
+            public void setCount(int value) {
+                this.count = value;
+            }
+
+
+            /**
+             * <p>Java-Klasse für anonymous complex type.
+             * 
+             * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+             * 
+             * <pre>
+             * &lt;complexType>
+             *   &lt;simpleContent>
+             *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+             *       &lt;attribute name="isAdmin" use="required" type="{http://www.w3.org/2001/XMLSchema}boolean" />
+             *     &lt;/extension>
+             *   &lt;/simpleContent>
+             * &lt;/complexType>
+             * </pre>
+             * 
+             * 
+             */
+            @XmlAccessorType(XmlAccessType.FIELD)
+            @XmlType(name = "", propOrder = {
+                "value"
+            })
+            public static class User {
+
+                @XmlValue
+                protected String value;
+                @XmlAttribute(name = "isAdmin", required = true)
+                protected boolean isAdmin;
+
+                /**
+                 * Ruft den Wert der value-Eigenschaft ab.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
+                 */
+                public String getValue() {
+                    return value;
+                }
+
+                /**
+                 * Legt den Wert der value-Eigenschaft fest.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
+                 */
+                public void setValue(String value) {
+                    this.value = value;
+                }
+
+                /**
+                 * Ruft den Wert der isAdmin-Eigenschaft ab.
+                 * 
+                 */
+                public boolean isIsAdmin() {
+                    return isAdmin;
+                }
+
+                /**
+                 * Legt den Wert der isAdmin-Eigenschaft fest.
+                 * 
+                 */
+                public void setIsAdmin(boolean value) {
+                    this.isAdmin = value;
+                }
+
             }
 
         }

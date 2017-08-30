@@ -1,29 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:element name="projects">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="project" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="projectname" type="xs:string"></xs:element>
-							<xs:element name="lastmod" type="xs:dateTime"></xs:element>
-							<xs:element name="description" type="xs:string"></xs:element>
-							<xs:element name="key" type="xs:string"></xs:element>
-							<xs:element name="users">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="user" maxOccurs="unbounded" type="xs:string"></xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-						<xs:attribute name="name" type="xs:string"></xs:attribute>
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-			<xs:attribute name="count" type="xs:int"></xs:attribute>
-		</xs:complexType>
-	</xs:element>
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="projectlist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="project" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="projectname"/>
+              <xs:element type="xs:dateTime" name="lastmod"/>
+              <xs:element type="xs:string" name="description"/>
+              <xs:element type="xs:string" name="key"/>
+              <xs:element name="userlist">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="user" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:boolean" name="isAdmin" use="required"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:int" name="count" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="count"/>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
