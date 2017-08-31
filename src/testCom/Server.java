@@ -7,8 +7,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.rmi.server.UnicastRemoteObject;
 
-public class Server {
+public class Server extends UnicastRemoteObject implements KommController{
 
 	static ComProtocol protocol;
 	public static int clientcounter = 0;
