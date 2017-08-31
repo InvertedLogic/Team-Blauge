@@ -6,11 +6,53 @@ import java.util.HashMap;
 public class Projekt {
 	
 	private User ersteller;
-	private HashMap<String, Task> tasks= new HashMap<String, Task>();
+	private HashMap<String, Task> tasks = new HashMap<String, Task>();
 	private HashMap<String, User> users = new HashMap<String, User>();
 	private String bezeichnung; /* evt. name? */
-	private ArrayList<Status> statusliste;
+	private int id;
+	private Statusliste statusliste;
+	private Datum letzteAenderung;
+	private Datum erstellungsDatum;
+	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setStatusliste(Statusliste statusliste) {
+		this.statusliste = statusliste;
+	}
+
+	public Datum getLetzteAenderung() {
+		return letzteAenderung;
+	}
+
+	public void setLetzteAenderung(Datum letzteAenderung) {
+		this.letzteAenderung = letzteAenderung;
+	}
+
+	public Datum getErstellungsDatum() {
+		return erstellungsDatum;
+	}
+
+	public void setErstellungsDatum(Datum erstellungsDatum) {
+		this.erstellungsDatum = erstellungsDatum;
+	}
+
+	public void setTasks(HashMap<String, Task> tasks) {
+		this.tasks = tasks;
+	}
+
+	public void setUsers(HashMap<String, User> users) {
+		this.users = users;
+	}
+
 	private ArrayList<String> tagListe;
+
 
 	public Projekt(User u, String bezeichnung) {
 		this.ersteller = u;
@@ -62,12 +104,11 @@ public class Projekt {
 		Task task = new Task(name,kommentar,u);
 		this.addTaskToHashMap(task);
 	}
-	public ArrayList<Status> getStatusliste() {
+
+	public Statusliste getStatusliste() {
 		return statusliste;
 	}
-	public void setStatusliste(ArrayList<Status> statusliste) {
-		this.statusliste = statusliste;
-	}
+
 	public void setTagListe(ArrayList<String> tagListe)
 	{
 		this.tagListe = tagListe;
