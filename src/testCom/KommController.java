@@ -12,6 +12,8 @@ import model.*;
  */
 
 public interface KommController extends Remote {
+	
+	String DEFAULT_RMI_OBJECT_NAME = "Blauge";
 
 	/* Ausbaustufe I */
 	public boolean projektCreate(User u, String bezeichnung) throws RemoteException;
