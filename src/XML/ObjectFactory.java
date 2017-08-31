@@ -2,11 +2,11 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2017.08.30 um 12:59:38 PM CEST 
+// Generiert: 2017.08.31 um 01:15:01 PM CEST 
 //
 
 
-package classes;
+package XML;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the classes package. 
+ * generated in the XML package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,42 +30,42 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: classes
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: XML
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link Projectlist }
+     * Create an instance of {@link Project }
      * 
      */
-    public Projectlist createProjectlist() {
-        return new Projectlist();
+    public Project createProject() {
+        return new Project();
     }
 
     /**
-     * Create an instance of {@link Projectlist.Project }
+     * Create an instance of {@link Project.Tasklist }
      * 
      */
-    public Projectlist.Project createProjectlistProject() {
-        return new Projectlist.Project();
+    public Project.Tasklist createProjectTasklist() {
+        return new Project.Tasklist();
     }
 
     /**
-     * Create an instance of {@link Projectlist.Project.Userlist }
+     * Create an instance of {@link Project.Statuslist }
      * 
      */
-    public Projectlist.Project.Userlist createProjectlistProjectUserlist() {
-        return new Projectlist.Project.Userlist();
+    public Project.Statuslist createProjectStatuslist() {
+        return new Project.Statuslist();
     }
 
     /**
-     * Create an instance of {@link Projectlist.Project.Userlist.User }
+     * Create an instance of {@link Project.Tasklist.Task }
      * 
      */
-    public Projectlist.Project.Userlist.User createProjectlistProjectUserlistUser() {
-        return new Projectlist.Project.Userlist.User();
+    public Project.Tasklist.Task createProjectTasklistTask() {
+        return new Project.Tasklist.Task();
     }
 
 }

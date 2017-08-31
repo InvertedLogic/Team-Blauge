@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="project">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="projectname"/>
+        <xs:element type="xs:string" name="creator"/>
+        <xs:element type="xs:dateTime" name="created_on"/>
+        <xs:element type="xs:dateTime" name="lastmod"/>
+        <xs:element name="tasklist">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="task">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="taskname"/>
+                    <xs:element type="xs:string" name="statusname"/>
+                    <xs:element type="xs:dateTime" name="lastmod"/>
+                    <xs:element type="xs:string" name="comment"/>
+                    <xs:element type="xs:int" name="color"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:int" name="ID"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="count"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="statuslist">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="status" maxOccurs="unbounded" minOccurs="3"/>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="length"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:int" name="ID"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

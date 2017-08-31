@@ -5,8 +5,6 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.*;
 import org.xml.sax.*;
 
-import classes.Projectlist;
-
 public class XsdValidation {
 
 	public static void main(String[] args) throws Exception {

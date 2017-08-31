@@ -6,7 +6,7 @@
 //
 
 
-package classes;
+package XML;
 
 import java.util.ArrayList;
 import java.util.List;
