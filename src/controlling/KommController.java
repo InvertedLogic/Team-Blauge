@@ -4,23 +4,22 @@ package controlling;
  * 
  * @author Lars Raschke
  * 
- * To-Do:
- * - Projekt erstellen
- * - Projekt abschlieﬂen
- * - Task erstellen
- * - Task bearbeiten
- * - Task verschieben
- * 
  */
 
 public interface KommController {
 	
-	public KommController() {
-		
-	}
+	/* Ausbaustufe I */
+	public void projektCreate();
+	public void projectFinalize();
+	public void taskCreate();
+	public void taskEdit();
+	public void taskMoveFwd();
+	public void taskMoveRwd();
 	
-	public void projektErstellen() {
-		
-	}
+	/* Ausbaustufe II */
+	public void addUser();	
 	
+	/* Ausbaustufe IV */
+	public void addStatus();
+	public void changeStatusName();
 }
