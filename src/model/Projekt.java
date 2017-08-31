@@ -23,10 +23,6 @@ public class Projekt {
 		this.id = id;
 	}
 
-	public Statusliste getStatusliste() {
-		return statusliste;
-	}
-
 	public void setStatusliste(Statusliste statusliste) {
 		this.statusliste = statusliste;
 	}
@@ -54,6 +50,9 @@ public class Projekt {
 	public void setUsers(HashMap<String, User> users) {
 		this.users = users;
 	}
+
+	private ArrayList<String> tagListe;
+
 
 	public Projekt(User u, String bezeichnung) {
 		this.ersteller = u;
@@ -105,5 +104,20 @@ public class Projekt {
 		Task task = new Task(name,kommentar,u);
 		this.addTaskToHashMap(task);
 	}
+
+	public Statusliste getStatusliste() {
+		return statusliste;
+	}
+
+	public void setTagListe(ArrayList<String> tagListe)
+	{
+		this.tagListe = tagListe;
+	}
+	public ArrayList<String> getTagListe()
+	{
+		return this.tagListe;
+	}
+
+	
 	
 }
