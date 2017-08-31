@@ -1,25 +1,30 @@
 package controlling;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+import model.*;
+
 /**
  * 
  * @author Lars Raschke
  * 
  */
 
-public interface KommController {
-	
+public interface KommController extends Remote {
+
 	/* Ausbaustufe I */
-	public void projektCreate();
-	public void projectFinalize();
-	public void taskCreate();
-	public void taskEdit();
-	public void taskMoveFwd();
-	public void taskMoveRwd();
-	
+	public boolean projektCreate(User u, String bezeichnung) throws RemoteException;
+	public boolean projectFinalize() throws RemoteException;
+	public boolean taskCreate() throws RemoteException;
+	public boolean taskEdit() throws RemoteException;
+	public boolean taskMoveFwd() throws RemoteException;
+	public boolean taskMoveRwd() throws RemoteException;
+
 	/* Ausbaustufe II */
-	public void addUser();	
-	
+	public boolean addUser() throws RemoteException;
+
 	/* Ausbaustufe IV */
-	public void addStatus();
-	public void changeStatusName();
+	public boolean addStatus() throws RemoteException;
+	public boolean changeStatusName() throws RemoteException;
 }
