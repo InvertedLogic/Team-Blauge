@@ -4,12 +4,21 @@ public class Task {
 	
 	private Status status;
 	private String name;
-	private User[] nutzer;
-	private Datum erstellungsDatum;
-	private Datum letzteBewegung;
+	private Datum letzteAenderung;
 	private String kommentar;
 	private int farbe;
+	private int id;
+	private User letzterNutzer;
 	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public Task(String name, String kommentar){
 		this.name = name;
 		this.kommentar = kommentar;
@@ -28,23 +37,20 @@ public class Task {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public User[] getNutzer() {
-		return nutzer;
+
+	public User getLetzterNutzer() {
+		return letzterNutzer;
 	}
-	public void setNutzer(User[] nutzer) {
-		this.nutzer = nutzer;
+
+	public void setLetzterNutzer(User letzterNutzer) {
+		this.letzterNutzer = letzterNutzer;
 	}
-	public Datum getErstellungsDatum() {
-		return erstellungsDatum;
+
+	public Datum getLetzteAenderung() {
+		return letzteAenderung;
 	}
-	public void setErstellungsDatum(Datum erstellungsDatum) {
-		this.erstellungsDatum = erstellungsDatum;
-	}
-	public Datum getLetzteBewegung() {
-		return letzteBewegung;
-	}
-	public void setLetzteBewegung(Datum letzteBewegung) {
-		this.letzteBewegung = letzteBewegung;
+	public void setLetzteAenderung(Datum letzteAenderung) {
+		this.letzteAenderung = letzteAenderung;
 	}
 	public String getKommentar() {
 		return kommentar;
