@@ -24,7 +24,7 @@ public class Abfragen {
 				String pw = "";
 				if(sr.getAttributes().get("userPassword") != null)
 				{
-					pw = sr.getAttributes().get("userPassword").toString();
+					pw = sr.getAttributes().get("userPassword").get().toString();
 				}
 				
 				if(pw.equals(passwort))
