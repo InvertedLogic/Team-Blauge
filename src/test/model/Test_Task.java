@@ -15,16 +15,7 @@ import model.Task;
 public class Test_Task {
 
 	Task task = null;
-	
-	/**
-	 * set up for the test cases.
-	 */
-	@Before
-	public void setUp() {
-		
-		task = new Task("3Pkt Contest", "nothing but net");
-		
-	}
+
 	
 	@Test
 	public void test() {
