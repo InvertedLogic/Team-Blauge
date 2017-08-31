@@ -17,7 +17,6 @@ public class Server extends UnicastRemoteObject implements KommController{
 
 	protected Server() throws RemoteException{};
 
-	static ComProtocol protocol;
 	public static int clientcounter = 0;
 
 	private static void handleConnection(Socket client) throws IOException {
@@ -26,17 +25,8 @@ public class Server extends UnicastRemoteObject implements KommController{
 		StringBuilder builder = new StringBuilder();
 		PrintWriter out = new PrintWriter(client.getOutputStream(), true);
 
-		String string1 = reader.readLine();
-		String output = "Fail";
-
-		protocol = new ComProtocol();
-
-		if (string1.contains("changeAttrByID")) {
-			Request req = protocol.valChangeAttrByID(string1);
-			output = "ID: " + req.id + "\tAttr: " + req.attr + "\tValue: " + req.value + "\tTimestamp: "
-					+ req.timeStamp;
-		}
-		out.println(output);
+		
+		
 	}
 
 	public static void main(String[] args) throws IOException {
