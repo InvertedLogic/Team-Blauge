@@ -19,9 +19,11 @@ public class Task {
 		this.id = id;
 	}
 
-	public Task(String name, String kommentar){
+
+	public Task(String name, String kommentar, User u){
 		this.name = name;
 		this.kommentar = kommentar;
+		this.letzterNutzer = u;
 	}
 	
 	
