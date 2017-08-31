@@ -15,7 +15,7 @@ public class Projekt {
 	public Projekt(User u, String bezeichnung) {
 		this.ersteller = u;
 		this.bezeichnung = bezeichnung;
-		users.put(u.getName(), u);
+		users.put(u.getNutzername(), u);
 		
 	}
 
@@ -51,11 +51,11 @@ public class Projekt {
 	}
 	
 	public void addUserToHashMap(User user){
-		users.put(user.getName(), user);
+		users.put(user.getNutzername(), user);
 	}
 	
 	public void deleteUserFromHashMap(User user){
-		users.remove(user.getName());
+		users.remove(user.getNutzername());
 	}
 
 	public void createTask(String name, String kommentar, User u) {
