@@ -13,6 +13,8 @@ import org.junit.Test;
 import model.Status;
 import model.Statusliste;
 
+import java.util.ArrayList;
+
 public class Test_Statusliste {
 	
 	Statusliste list = null;
@@ -53,6 +55,15 @@ public class Test_Statusliste {
 		assertTrue(list.search(testing));
 		assertTrue(doing == testing.getVorgaenger());
 		assertTrue(finished == testing.getNachfolger());
+	}
+	
+	@Test
+	public void getAllTest(){
+		ArrayList<Status> testliste = list.getAll();
+		assertTrue(testliste.contains(toDo));
+		assertTrue(testliste.contains(doing));
+		assertTrue(testliste.contains(finished));
+		assertFalse(testliste.contains(testing));
 	}
 
 }
