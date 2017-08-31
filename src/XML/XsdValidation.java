@@ -1,12 +1,11 @@
 package XML;
-import classes.Projects.Project;
 import java.io.*;
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.*;
 import org.xml.sax.*;
 
-import classes.ProjectType;
+import classes.Projectlist;
 
 public class XsdValidation {
 
@@ -15,8 +14,9 @@ public class XsdValidation {
 			System.out.println("Bitte XSD-Schema und XML-Dokument angeben.");
 			return;
 		}
-		Project test = new Project();
-		System.out.println(test.getUser());
+		Projectlist test = new Projectlist();
+		test.setCount(3);
+		System.out.println(test.getCount());
 		System.out.println(args[0] + " + " + args[1]);
 		XsdValidation.validate("projectlist_schema.xsd", "projectlist.xml");
 	}

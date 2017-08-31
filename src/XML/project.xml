@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><!--comment-->
-<Projekte>
-<count>0</count>
-
- <Projekt number="0000">
-    <Name>BLAUGE</Name>
-    <Datum>21.08.2017</Datum>
-    <Versionsnummer>000</Versionsnummer>
-    <Kommentar>"Hallo Welt"</Kommentar>
-    <Key>1234</Key>
-  </Projekt>
- 
- </Projekte>
+<?xml version="1.0" encoding="UTF-8"?><!--comment -->
+<project name="Testprojekt 1">
+	<projectname>Testprojekt 1</projectname>
+	<lastmod>2001-12-31T12:00:00</lastmod>
+	<tasklist count="2">
+		<task name=""
+	</tasklist>
+</project>
  
