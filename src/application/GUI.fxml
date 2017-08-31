@@ -74,7 +74,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
-                              <Image url="@../../../../resources/Icons/pricetags.png" />
+                              <Image url="@../resources/Icons/pricetags.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -108,7 +108,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
-                              <Image url="@../../../../resources/Icons/ios7-chatbubble.png" />
+                              <Image url="@../resources/Icons/ios7-chatbubble.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -123,7 +123,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
-                              <Image url="@../../../../resources/Icons/plus-round.png" />
+                              <Image url="@../resources/Icons/plus-round.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -137,7 +137,7 @@
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
-                              <Image url="@../../../../resources/Icons/Forward-512.png" />
+                              <Image url="@../resources/Icons/Forward-512.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -150,7 +150,7 @@
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
-                  <Image url="@../../../../resources/Icons/ios7-browsers.png" />
+                  <Image url="@../resources/Icons/ios7-browsers.png" />
                </image>
             </ImageView>
          </graphic>
@@ -159,7 +159,7 @@
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
-                  <Image url="@../../../../resources/Icons/log-out.png" />
+                  <Image url="@../resources/Icons/log-out.png" />
                </image>
             </ImageView>
          </graphic>
@@ -168,7 +168,7 @@
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
-                  <Image url="@../../../../resources/Icons/ios7-redo.png" />
+                  <Image url="@../resources/Icons/ios7-custom-proceed.png" />
                </image>
             </ImageView>
          </graphic>
@@ -177,7 +177,7 @@
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
-                  <Image url="@../../../../resources/Icons/ios7-undo.png" />
+                  <Image url="@../resources/Icons/ios7-custom-back.png" />
                </image>
             </ImageView>
          </graphic>
@@ -186,7 +186,7 @@
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
-                  <Image url="@../../../../resources/Icons/ios7-information-outline.png" />
+                  <Image url="@../resources/Icons/ios7-custom-information-bold.png" />
                </image>
             </ImageView>
          </graphic>
@@ -195,7 +195,7 @@
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
-                  <Image url="@../../../../resources/Icons/pricetags.png" />
+                  <Image url="@../resources/Icons/pricetags.png" />
                </image>
             </ImageView>
          </graphic>
@@ -204,7 +204,7 @@
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
-                  <Image url="@../../../../resources/Icons/ios7-chatbubble.png" />
+                  <Image url="@../resources/Icons/ios7-chatbubble.png" />
                </image>
             </ImageView>
          </graphic>
