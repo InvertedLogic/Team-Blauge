@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 
 public class LoginController {
 
+	private Main main;
+	
     @FXML
     private JFXTextField textFieldLogInScreenUsername;
 
@@ -28,10 +30,21 @@ public class LoginController {
     void buttonLogInScreenInformationPressed(ActionEvent event) {
 
     }
+    
+    public void setMainApp(Main main) {
+		this.main = main;
+	}
 
     @FXML
     void buttonLogInScreenLogInPressed(ActionEvent event) {
-
+    	//main.showGUI();
+    	main.log(textFieldLogInScreenUsername.getText(), "username");
+		main.log(textFieldLogInScreenPassword.getText(), "passwort");
+    	if(textFieldLogInScreenUsername.getText() == "fiete" && textFieldLogInScreenPassword.getText() == "12345a") {
+    		main.log(textFieldLogInScreenUsername.getText(), "username");
+    		main.log(textFieldLogInScreenPassword.getText(), "passwort");
+    		
+    	}
     }
 
     @FXML

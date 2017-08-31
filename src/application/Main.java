@@ -47,11 +47,12 @@ public class Main extends Application {
 	
 	public void showGUI() {
         try {
-            // Load person overview.
+            // Load GUI fxml
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("GUI.fxml"));
             AnchorPane GUI = (AnchorPane) loader.load();
-
+            GUIController controller = loader.getController();
+            controller.setMainApp(this);
             root.setCenter(GUI);
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,11 +61,12 @@ public class Main extends Application {
 
 	public void showLogin() {
 		 try {
-	            // Load person overview.
+	            // Load Loginscreen fxml.
 	            FXMLLoader loader = new FXMLLoader();
 	            loader.setLocation(Main.class.getResource("loginScreen.fxml"));
 	            AnchorPane GUI = (AnchorPane) loader.load();
-
+	            LoginController controller = loader.getController();
+	            controller.setMainApp(this);
 	            root.setCenter(GUI);
 	        } catch (IOException e) {
 	            e.printStackTrace();
@@ -74,5 +76,27 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
+	/*
+	 * Logfunktion, überladen um mit und ohne Label loggen zu können
+	 */
+	
+	public void log(String text, String label) {
+		System.out.print("*** LOG: ");
+		if(label != "") {
+			System.out.print(label);
+		}
+		else {
+			System.out.print(">No Label<");
+		}
+		System.out.print(":\t");
+		System.out.print(text + "\n");
+	}
+	
+	public void log(String text) {
+		System.out.print("*** LOG: >No Label<:\t");
+		System.out.print(text + "\n");
+	}
+	
 }
 	

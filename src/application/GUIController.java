@@ -159,7 +159,7 @@ public class GUIController {
 
     @FXML
     void buttonLogOutPressed(ActionEvent event) {
-
+    	main.showLogin();
     }
 
     @FXML
