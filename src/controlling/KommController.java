@@ -13,6 +13,14 @@ package controlling;
  * 
  */
 
-public class KommController {
+public interface KommController {
+	
+	public KommController() {
+		
+	}
+	
+	public void projektErstellen() {
+		
+	}
 	
 }
