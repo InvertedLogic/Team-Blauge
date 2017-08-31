@@ -45,11 +45,11 @@ public class Projekt {
 	}
 	
 	public void addUserToHashMap(User user){
-		Users.put(user.getName(), user);
+		Users.put(user.getNutzername(), user);
 	}
 	
 	public void deleteUserFromHashMap(User user){
-		Users.remove(user.getName());
+		Users.remove(user.getNutzername());
 	}
 
 	public void createTask(String name, String kommentar) {
