@@ -36,12 +36,9 @@ import model.Datum;
 @SuppressWarnings("deprecation")
 public class Xml_Server {
 	
-	private static final String TEST_XSD_DATEI = "projectliste_schema.xsd";
-	   private static final String TEST_XML_DATEI = "project.xml";
-	   private static final String ENCODING       = "UTF-8";
-	 //  private static final String PACKAGE        = "blauge.xml";
+
 	   
-	   static class ElementeSpeicherungInListe implements Test_XML.ElementeVerarbeitung
+	static class ElementeSpeicherungInListe implements Test_XML.ElementeVerarbeitung
 	   {
 	       List elemente = (List) new ArrayList<Object>();
 
@@ -99,6 +96,7 @@ public class Xml_Server {
 		return pro;
 		
 	}
+	
 	private static Projectlist unmarshalFromFile(String fileName) throws JAXBException {
 	    JAXBContext jaxbContext = JAXBContext.newInstance(Projectlist.class);
 	    javax.xml.bind.Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -128,8 +126,7 @@ public class Xml_Server {
 		marshalToFile(data, "server_projectlist.xml");
 		
 	}
-	
-	
+		
 	public static void changeEntryinXML(XMLGregorianCalendar time, String name) throws JAXBException, XMLStreamException
 	{
 		Project pro = searchinXML(name);
