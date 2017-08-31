@@ -1,43 +1,49 @@
 package model;
 
 public class User {
+
+
+	private String nutzername;
+	private boolean isAdmin;
+	private String nachname;
+	private String vorname;
 	
-	private String name;
-	private long id;
-	private String passwort;
-	private boolean admin;
-	
-	public User(String name, long id, String passwort, boolean admin){
-		this.name = name;
-		this.id = id;
-		this.passwort = passwort;
-		this.admin = admin;
+	public User(String nutzername, boolean isAdmin, String nachname, String vorname) {
+		this.nutzername = nutzername;
+		this.isAdmin = isAdmin;
+		this.nachname = nachname;
+		this.vorname = vorname;
 	}
 	
-	public String getName() {
-		return name;
+	public String getNutzername() {
+		return nutzername;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setNutzername(String nutzername) {
+		this.nutzername = nutzername;
 	}
-	public long getId() {
-		return id;
+
+	public boolean isAdmin() {
+		return isAdmin;
 	}
-	public void setId(long id) {
-		this.id = id;
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
-	public String getPasswort() {
-		return passwort;
+
+	public String getNachname() {
+		return nachname;
 	}
-	public void setPasswort(String passwort) {
-		this.passwort = passwort;
+
+	public void setNachname(String nachname) {
+		this.nachname = nachname;
 	}
-	public boolean getAdmin()
-	{
-		return admin;
+
+	public String getVorname() {
+		return vorname;
 	}
-	public void setAdmin(boolean admin)
-	{
-		this.admin = admin;
+
+	public void setVorname(String vorname) {
+		this.vorname = vorname;
 	}
 }
