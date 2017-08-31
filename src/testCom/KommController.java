@@ -16,13 +16,13 @@ public interface KommController extends Remote {
 	/* Ausbaustufe I */
 	public boolean projektCreate(User u, String bezeichnung) throws RemoteException;
 	public boolean projectFinalize() throws RemoteException;
-	public boolean taskCreate() throws RemoteException;
+	public boolean taskCreate(String name, String Kommentar, User u) throws RemoteException;
 	public boolean taskEdit() throws RemoteException;
-	public boolean taskMoveFwd() throws RemoteException;
-	public boolean taskMoveRwd() throws RemoteException;
+	public boolean taskMoveFwd(int id) throws RemoteException;
+	public boolean taskMoveRwd(int id) throws RemoteException;
 
 	/* Ausbaustufe II */
-	public boolean addUser() throws RemoteException;
+	public boolean addUser(User u, Projekt p) throws RemoteException;
 
 	/* Ausbaustufe IV */
 	public boolean addStatus() throws RemoteException;
