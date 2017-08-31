@@ -12,10 +12,13 @@ public class Task {
 	private String kommentar;
 	private int farbe;
 	private ArrayList<String> tags;
+	private User letzterNutzer;
+
 	
-	public Task(String name, String kommentar){
+	public Task(String name, String kommentar, User u){
 		this.name = name;
 		this.kommentar = kommentar;
+		this.setLetzterNutzer(u);
 	}
 	
 	
@@ -193,5 +196,15 @@ public class Task {
 	public void erstelleTag(String bezeichnung)
 	{
 		this.getTags().add(bezeichnung);
+	}
+
+
+	public User getLetzterNutzer() {
+		return letzterNutzer;
+	}
+
+
+	public void setLetzterNutzer(User letzterNutzer) {
+		this.letzterNutzer = letzterNutzer;
 	}
 }

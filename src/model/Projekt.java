@@ -58,8 +58,8 @@ public class Projekt {
 		users.remove(user.getName());
 	}
 
-	public void createTask(String name, String kommentar) {
-		Task task = new Task(name,kommentar);
+	public void createTask(String name, String kommentar, User u) {
+		Task task = new Task(name,kommentar,u);
 		this.addTaskToHashMap(task);
 	}
 	public ArrayList<Status> getStatusliste() {
