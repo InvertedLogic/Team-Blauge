@@ -9,10 +9,12 @@ public class Task {
 	private Datum letzteBewegung;
 	private String kommentar;
 	private int farbe;
+	private User letzterNutzer;
 	
-	public Task(String name, String kommentar){
+	public Task(String name, String kommentar, User u){
 		this.name = name;
 		this.kommentar = kommentar;
+		this.letzterNutzer = u;
 	}
 	
 	
