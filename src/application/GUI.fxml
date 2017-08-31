@@ -19,19 +19,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" style="-fx-background-color: #737373;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #FFA500;" text="Projekt">
+      <Label fx:id="labelProjectname" prefHeight="50.0" prefWidth="277.0" style="-fx-background-color: #FFA500;" text="Projektname">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font></Label>
-      <Label layoutX="400.0" prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: #969696;" text="Projektinformationen">
+      <Label fx:id="labelProjectinformation" layoutX="277.0" prefHeight="50.0" prefWidth="599.0" style="-fx-background-color: #969696;" text="Projektinformationen">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font></Label>
-      <Label layoutX="1100.0" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #cdcdcd;" text="User">
+      <Label fx:id="labelUser" layoutX="876.0" prefHeight="50.0" prefWidth="364.0" style="-fx-background-color: #cdcdcd;" text="Benutzer">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font></Label>
-      <MenuButton layoutX="14.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Filter">
+      <MenuButton fx:id="menuButtonFilter" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Filter">
          <items>
             <CheckMenuItem mnemonicParsing="false" text="Meine" />
             <CheckMenuItem mnemonicParsing="false" text="A" />
@@ -42,32 +42,32 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="349.0" style="-fx-background-color: #FFA500;">
                <children>
-                  <Label layoutX="5.0" layoutY="5.0" prefHeight="25.0" prefWidth="75.0" text="Taskname:">
+                  <Label fx:id="labelTaskname" layoutX="5.0" layoutY="5.0" prefHeight="25.0" prefWidth="75.0" text="Taskname:">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="5.0" layoutY="55.0" prefHeight="25.0" prefWidth="75.0" text="Autor:">
+                  <Label fx:id="labelAuthor" layoutX="5.0" layoutY="55.0" prefHeight="25.0" prefWidth="75.0" text="Autor:">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="5.0" layoutY="105.0" prefHeight="25.0" prefWidth="75.0" text="Status:">
+                  <Label fx:id="labelStatus" layoutX="5.0" layoutY="105.0" prefHeight="25.0" prefWidth="75.0" text="Status:">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="5.0" layoutY="155.0" prefHeight="25.0" prefWidth="75.0" text="Farbe:">
+                  <Label fx:id="labelColor" layoutX="5.0" layoutY="155.0" prefHeight="25.0" prefWidth="75.0" text="Farbe:">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="5.0" layoutY="205.0" prefHeight="25.0" prefWidth="100.0" text="Beschreibung:">
+                  <Label fx:id="labelDescription" layoutX="5.0" layoutY="205.0" prefHeight="25.0" prefWidth="100.0" text="Beschreibung:">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="5.0" layoutY="400.0" prefHeight="25.0" prefWidth="100.0" text="Tags:">
+                  <Label fx:id="labelTags" layoutX="5.0" layoutY="400.0" prefHeight="25.0" prefWidth="100.0" text="Tags:">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
@@ -79,29 +79,29 @@
                         </ImageView>
                      </graphic>
                   </Label>
-                  <Label layoutX="85.0" layoutY="55.0" prefHeight="25.0" prefWidth="260.0" text="Autor einfügen">
+                  <Label fx:id="labelActualAuthor" layoutX="85.0" layoutY="55.0" prefHeight="25.0" prefWidth="260.0" text="Autor einfügen">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="85.0" layoutY="105.0" prefHeight="25.0" prefWidth="260.0" text="Status Einfügen">
+                  <Label fx:id="labelActualStatus" layoutX="85.0" layoutY="105.0" prefHeight="25.0" prefWidth="260.0" text="Status Einfügen">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <JFXTextField focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="25.0" prefWidth="260.0" style="-fx-background-color: white;">
+                  <JFXTextField fx:id="textFieldTaskname" focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="25.0" prefWidth="260.0" style="-fx-background-color: white;">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXColorPicker layoutX="85.0" layoutY="155.0" prefHeight="25.0" />
-                  <JFXTextArea focusColor="#b71c1c" layoutX="5.0" layoutY="230.0" prefHeight="150.0" prefWidth="339.0">
+                  <JFXColorPicker fx:id="ColorPicker" layoutX="85.0" layoutY="155.0" onAction="#ColorPickerSelectionChanged" prefHeight="25.0" />
+                  <JFXTextArea fx:id="textAreaDescription" focusColor="#b71c1c" layoutX="5.0" layoutY="230.0" prefHeight="150.0" prefWidth="339.0">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextArea>
-                  <JFXListView layoutX="5.0" layoutY="455.0" prefHeight="100.0" prefWidth="339.0" />
-                  <Label layoutX="5.0" layoutY="565.0" prefHeight="25.0" prefWidth="120.0" text="Kommentare:">
+                  <JFXListView fx:id="listViewTags" layoutX="5.0" layoutY="455.0" prefHeight="100.0" prefWidth="339.0" />
+                  <Label fx:id="labelComments" layoutX="5.0" layoutY="565.0" prefHeight="25.0" prefWidth="120.0" text="Kommentare:">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
@@ -113,13 +113,13 @@
                         </ImageView>
                      </graphic>
                   </Label>
-                  <JFXListView layoutX="5.0" layoutY="620.0" prefHeight="100.0" prefWidth="339.0" />
-                  <JFXTextField focusColor="#b71c1c" layoutX="5.0" layoutY="425.0" prefWidth="300.0">
+                  <JFXListView fx:id="listViewComments" layoutX="5.0" layoutY="620.0" prefHeight="100.0" prefWidth="339.0" />
+                  <JFXTextField fx:id="textFieldTags" focusColor="#b71c1c" layoutX="5.0" layoutY="425.0" prefWidth="300.0">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="421.0" prefHeight="25.0" prefWidth="25.0">
+                  <JFXButton fx:id="buttonAddTag" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="421.0" prefHeight="25.0" prefWidth="25.0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
@@ -128,12 +128,12 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXTextField focusColor="#b71c1c" layoutX="5.0" layoutY="590.0" prefWidth="300.0">
+                  <JFXTextField fx:id="textFieldComments" focusColor="#b71c1c" layoutX="5.0" layoutY="590.0" prefWidth="300.0">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="586.0" prefHeight="25.0" prefWidth="25.0">
+                  <JFXButton fx:id="buttonAddComment" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="586.0" prefHeight="25.0" prefWidth="25.0">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
@@ -146,7 +146,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="330.0" prefHeight="50.0" prefWidth="70.0">
+      <JFXButton fx:id="buttonProjectselection" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" onAction="#buttonProjectselectionPressed" prefHeight="50.0" prefWidth="70.0">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
@@ -155,7 +155,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1170.0" prefHeight="50.0" prefWidth="70.0">
+      <JFXButton fx:id="buttonLogOut" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1170.0" onAction="#buttonLogOutPressed" prefHeight="50.0" prefWidth="70.0">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
@@ -164,7 +164,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="946.0" layoutY="50.0" prefHeight="50.0" prefWidth="70.0">
+      <JFXButton fx:id="buttonProceed" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="946.0" layoutY="50.0" onAction="#buttonProceedPressed" prefHeight="50.0" prefWidth="70.0">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
@@ -173,7 +173,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="876.0" layoutY="50.0" prefHeight="50.0" prefWidth="70.0">
+      <JFXButton fx:id="buttonReturn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="876.0" layoutY="50.0" onAction="#buttonReturnPressed" prefHeight="50.0" prefWidth="70.0">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
@@ -182,7 +182,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="100.0" prefHeight="50.0" prefWidth="50.0">
+      <JFXButton fx:id="buttonInformation" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="100.0" onAction="#buttonInformationPressed" prefHeight="50.0" prefWidth="50.0">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
@@ -191,7 +191,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton alignment="CENTER" cache="true" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0">
+      <JFXButton fx:id="buttonTags" alignment="CENTER" cache="true" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="150.0" onAction="#buttonTagsPressed" prefHeight="50.0" prefWidth="50.0">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
@@ -200,7 +200,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="200.0" prefHeight="50.0" prefWidth="50.0">
+      <JFXButton fx:id="buttonComments" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="200.0" onAction="#buttonCommentsPressed" prefHeight="50.0" prefWidth="50.0">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
@@ -225,23 +225,23 @@
             </ContextMenu>
          </contextMenu>
       </Label>
-      <Label alignment="CENTER" layoutY="100.0" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: #969696;" text="To Do">
+      <Label fx:id="labelToDo" alignment="CENTER" layoutY="100.0" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: #969696;" text="To Do">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="277.0" layoutY="100.0" prefHeight="30.0" prefWidth="276.0" style="-fx-background-color: #888888;" text="Doing">
+      <Label fx:id="labelDoing" alignment="CENTER" layoutX="277.0" layoutY="100.0" prefHeight="30.0" prefWidth="276.0" style="-fx-background-color: #888888;" text="Doing">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="553.0" layoutY="100.0" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: #969696;" text="Finished">
+      <Label fx:id="labelFinished" alignment="CENTER" layoutX="553.0" layoutY="100.0" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: #969696;" text="Finished">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font>
       </Label>
-      <JFXMasonryPane layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
-      <JFXMasonryPane layoutX="277.0" layoutY="130.0" prefHeight="590.0" prefWidth="276.0" style="-fx-background-color: #888888;" />
-      <JFXMasonryPane layoutX="553.0" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
+      <JFXMasonryPane fx:id="mansoryPaneToDo" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
+      <JFXMasonryPane fx:id="mansoryPaneDoing" layoutX="277.0" layoutY="130.0" prefHeight="590.0" prefWidth="276.0" style="-fx-background-color: #888888;" />
+      <JFXMasonryPane fx:id="mansoryPaneFinished" layoutX="553.0" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
    </children>
 </AnchorPane>
