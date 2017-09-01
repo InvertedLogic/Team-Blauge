@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -54,5 +55,6 @@
             <Image url="@../resources/Icons/Blauge-Logo.png" />
          </image>
       </ImageView>
+      <Label fx:id="infoLabelLogInScreen" layoutX="520.0" layoutY="244.0" prefHeight="34.0" prefWidth="200.0" textAlignment="CENTER" textFill="RED" />
    </children>
 </AnchorPane>

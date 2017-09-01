@@ -3,9 +3,12 @@ package application;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -52,8 +55,9 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("GUI.fxml"));
             AnchorPane GUI = (AnchorPane) loader.load();
             GUIController controller = loader.getController();
-            controller.setMainApp(this);
             root.setCenter(GUI);
+            controller.setMainApp(this);
+            controller.initnshit();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,8 +70,9 @@ public class Main extends Application {
 	            loader.setLocation(Main.class.getResource("loginScreen.fxml"));
 	            AnchorPane GUI = (AnchorPane) loader.load();
 	            LoginController controller = loader.getController();
-	            controller.setMainApp(this);
 	            root.setCenter(GUI);
+	            controller.setMainApp(this);
+	            controller.initnshit();
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }

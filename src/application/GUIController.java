@@ -8,10 +8,13 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class GUIController {
 	@FXML
@@ -140,7 +143,22 @@ public class GUIController {
 		});
 
 	}
-
+	
+	public void initnshit() {
+		//hier können keylistener und sowas initialisiert werden
+		
+		this.buttonLogOut.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke)
+            {
+                if (ke.getCode().equals(KeyCode.ESCAPE))
+                {
+                    main.showLogin();
+                }
+            }
+        });
+	}
+	
 	public void setMainApp(Main main) {
 		this.main = main;
 	}

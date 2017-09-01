@@ -9,6 +9,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Region;
@@ -18,11 +19,13 @@ public class LoginController {
 
 	private Main main;
 	
+	@FXML
+	private Label infoLabelLogInScreen;
+	
     @FXML
     private JFXTextField textFieldLogInScreenUsername;
 
-    @FXML
-    private JFXPasswordField textFieldLogInScreenPassword;
+    @FXML JFXPasswordField textFieldLogInScreenPassword;
 
     @FXML
     private JFXButton buttonLogInScreenLogIn;
@@ -42,19 +45,26 @@ public class LoginController {
     	
     	System.out.println("created LoginController");
     	
+    	//infoLabelLogInScreen.setText("");
+    	
     	
     	/*
     	 * Keylistener for calling login function when pressing ENTER in passwordline
     	 * doesn't work yet, don't know why
     	 */
-    	JFXPasswordField textFieldLogInScreenPassword = new JFXPasswordField();
+    	//JFXPasswordField textFieldLogInScreenPassword = new JFXPasswordField();
     	/*textFieldLogInScreenPassword.setOnKeyPressed(event -> {
     		   if(event.getCode() == KeyCode.ENTER){
     			     checkLoginData();
     		   }
     	});*/
     	
-    	textFieldLogInScreenPassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
+    	
+        
+    }
+    
+    public void initnshit() {
+    	this.textFieldLogInScreenPassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent ke)
             {
@@ -64,7 +74,6 @@ public class LoginController {
                 }
             }
         });
-        
     }
     
     
@@ -87,6 +96,9 @@ public class LoginController {
 	    if(textFieldLogInScreenUsername.getText().equals(username)  && textFieldLogInScreenPassword.getText().equals(passwort)) {
 			main.showGUI();
 		}
+	    else {
+	    	infoLabelLogInScreen.setText("Falsche Login Daten! (fiete, 123)");
+	    }
     }
 
     @FXML
