@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" style="-fx-background-color: #737373;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GUIController">
+   <children>
+      <Label fx:id="labelUser" layoutX="876.0" prefHeight="50.0" prefWidth="364.0" style="-fx-background-color: #cdcdcd;" text="Benutzer">
+         <font>
+            <Font name="Roboto Light" size="15.0" />
+         </font></Label>
+      <JFXButton fx:id="buttonLogOut" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1170.0" onAction="#buttonLogOutPressed" prefHeight="50.0" prefWidth="70.0">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+               <image>
+                  <Image url="@../resources/Icons/log-out.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXTreeTableView layoutY="100.0" prefHeight="620.0" prefWidth="553.0" />
+   </children>
 </AnchorPane>
-
