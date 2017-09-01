@@ -100,6 +100,9 @@ public class GUIController {
 
     @FXML
     private JFXButton buttonComments;
+    
+    @FXML
+    private JFXButton buttonNewTask;
 
     @FXML
     private Label labelToDo;
@@ -179,6 +182,11 @@ public class GUIController {
 
     @FXML
     void buttonTagsPressed(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void buttonNewTaskPressed(ActionEvent event) {
 
     }
 }
