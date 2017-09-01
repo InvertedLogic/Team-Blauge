@@ -4,8 +4,15 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
+import javafx.beans.binding.DoubleBinding;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
 
 public class LoginController {
 
@@ -31,20 +38,55 @@ public class LoginController {
 
     }
     
+    public LoginController() {
+    	
+    	System.out.println("created LoginController");
+    	
+    	
+    	/*
+    	 * Keylistener for calling login function when pressing ENTER in passwordline
+    	 * doesn't work yet, don't know why
+    	 */
+    	JFXPasswordField textFieldLogInScreenPassword = new JFXPasswordField();
+    	textFieldLogInScreenPassword.setOnKeyPressed(event -> {
+    		   if(event.getCode() == KeyCode.ENTER){
+    			     checkLoginData();
+    		   }
+    	});
+    	/*
+    	textFieldLogInScreenPassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke)
+            {
+                if (ke.getCode().equals(KeyCode.ENTER))
+                {
+                    checkLoginData();
+                }
+            }
+        });
+        */
+    }
+    
+    
     public void setMainApp(Main main) {
 		this.main = main;
 	}
 
+    
+    
     @FXML
     void buttonLogInScreenLogInPressed(ActionEvent event) {
-    	//main.showGUI();
-    	main.log(textFieldLogInScreenUsername.getText(), "username");
-		main.log(textFieldLogInScreenPassword.getText(), "passwort");
-    	if(textFieldLogInScreenUsername.getText() == "fiete" && textFieldLogInScreenPassword.getText() == "12345a") {
-    		main.log(textFieldLogInScreenUsername.getText(), "username");
-    		main.log(textFieldLogInScreenPassword.getText(), "passwort");
-    		
-    	}
+    	checkLoginData();
+    }
+    
+    private String username = "fiete";
+    private String passwort = "123";
+    
+    public void checkLoginData() {
+    	main.log("Check Login");
+	    if(textFieldLogInScreenUsername.getText().equals(username)  && textFieldLogInScreenPassword.getText().equals(passwort)) {
+			main.showGUI();
+		}
     }
 
     @FXML
