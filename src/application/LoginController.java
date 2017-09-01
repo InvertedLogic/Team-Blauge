@@ -74,6 +74,7 @@ public class LoginController {
                 }
             }
         });
+    	//main.showGUI();
     }
     
     

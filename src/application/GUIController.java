@@ -1,18 +1,25 @@
 package application;
 
+import java.io.File;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXColorPicker;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXMasonryPane;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import com.sun.prism.paint.Color;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
@@ -82,6 +89,12 @@ public class GUIController {
 
     @FXML
     private JFXButton buttonAddComment;
+    
+    @FXML
+    private JFXButton buttonEditTaskName;
+    
+    @FXML
+    private ImageView buttonEditTaskNameIcon;
 
     @FXML
     private JFXButton buttonProjectselection;
@@ -146,8 +159,10 @@ public class GUIController {
 	
 	public void initnshit() {
 		//hier können keylistener und sowas initialisiert werden
+    	textFieldTaskname.editableProperty().set(false);
+
 		
-		this.buttonLogOut.setOnKeyPressed(new EventHandler<KeyEvent>() {
+		((Scene) labelProjectname.getScene()).setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent ke)
             {
@@ -157,6 +172,7 @@ public class GUIController {
                 }
             }
         });
+		
 	}
 	
 	public void setMainApp(Main main) {
@@ -204,7 +220,56 @@ public class GUIController {
     }
     
     @FXML
+    void buttonEditTaskNamePressed(ActionEvent event) {
+    	if(textFieldTaskname.editableProperty().get()){
+    		textFieldTaskname.editableProperty().set(false);
+        	saveEnteredTaskname(textFieldTaskname.getText());
+    		/*
+    		 * TODO:
+    		 * ändere das icon des buttons wieder zu 'Stift'
+    		 */
+    	}
+    	else {
+    		
+    		this.textFieldTaskname.setOnKeyPressed(new EventHandler<KeyEvent>() {
+	            @Override
+	            public void handle(KeyEvent ke)
+	            {
+	                if (ke.getCode().equals(KeyCode.ENTER))
+	                {
+	                	saveEnteredTaskname(textFieldTaskname.getText());
+	                	textFieldTaskname.editableProperty().set(false);
+	                	
+	                    /*
+	                     * TODO:
+	                     * ändere Buttonicon wieder zu stift
+	                     * wenn >TAB< gedrueckt waehrend im Textfield soll fokus auf Button gelegt werden
+	                     */ 
+	                	//File file = new File("/resources/Icons/save.png");
+	                	Image img = new Image("./src/main/resources/Icons/save.png",true);
+	                	buttonEditTaskNameIcon.setImage(img);
+	                	//buttonEditTaskNameIcon.getImage();
+	                }
+	            } 
+	        });
+    	
+    		textFieldTaskname.editableProperty().set(true);
+    		
+    		/*
+    		 * TODO:
+    		 * ändere Icon zu speichern icon
+    		 */
+    		
+    	}
+    }
+    void saveEnteredTaskname(String name) {
+    	textFieldTaskname.setText(name);
+    	labelActualAuthor.setText(name);
+    }
+    
+    
+    @FXML
     void buttonNewTaskPressed(ActionEvent event) {
-    	labelProjectname.setT
+    	labelProjectname.setText("    Neuer Task?");
     }
 }
