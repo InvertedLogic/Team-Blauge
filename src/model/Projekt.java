@@ -106,20 +106,26 @@ public class Projekt {
 		return statusliste;
 	}
 	
-	public boolean searchTag(String tagname)
+	/**
+	 * 
+	 * @param tagname
+	 * @return returns a HashMap of all tasks that have the tagname as tag
+	 */
+	public HashMap<String, Task> getTasksOfTag(String tagname)
 	{
-		boolean found = false; 
-		for(int i=0; i<getTasks().size(); i++)
+		HashMap<String, Task> taskList = new HashMap<String, Task>();
+		for(int i=0; i<this.getTasks().size(); i++)
 		{
 			for(int j=0; j<this.getTasks().get(i).getTags().size(); j++)
 			{
 				if(this.getTasks().get(i).getTags().get(j) == tagname)
 				{
-					System.out.println("Tag \"" + tagname + "\" gefunden in " + this.getTasks().get(i).getName() + ".");
-					found = true;
+					//System.out.println("Tag \"" + tagname + "\" gefunden in " + this.getTasks().get(i).getName() + ".");
+					taskList.put(tagname, this.getTasks().get(i));
+					break;
 				}
 			}
 		}
-		return found;
+		return taskList;
 	}
 }
