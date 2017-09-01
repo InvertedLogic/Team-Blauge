@@ -13,6 +13,7 @@ public class Projekt {
 	private Statusliste statusliste;
 	private Datum letzteAenderung;
 	private Datum erstellungsDatum;
+	private ArrayList<String> tagListe;
 	
 
 	public int getId() {
@@ -50,8 +51,6 @@ public class Projekt {
 	public void setUsers(HashMap<String, User> users) {
 		this.users = users;
 	}
-
-	private ArrayList<String> tagListe;
 
 
 	public Projekt(User u, String bezeichnung) {
