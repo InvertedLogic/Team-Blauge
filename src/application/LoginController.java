@@ -48,12 +48,12 @@ public class LoginController {
     	 * doesn't work yet, don't know why
     	 */
     	JFXPasswordField textFieldLogInScreenPassword = new JFXPasswordField();
-    	textFieldLogInScreenPassword.setOnKeyPressed(event -> {
+    	/*textFieldLogInScreenPassword.setOnKeyPressed(event -> {
     		   if(event.getCode() == KeyCode.ENTER){
     			     checkLoginData();
     		   }
-    	});
-    	/*
+    	});*/
+    	
     	textFieldLogInScreenPassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent ke)
@@ -64,7 +64,7 @@ public class LoginController {
                 }
             }
         });
-        */
+        
     }
     
     
