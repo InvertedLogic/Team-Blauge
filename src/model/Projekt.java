@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Projekt {
@@ -13,7 +12,6 @@ public class Projekt {
 	private Statusliste statusliste;
 	private Datum letzteAenderung;
 	private Datum erstellungsDatum;
-	private ArrayList<String> tagListe;
 	
 
 	public int getId() {
@@ -107,16 +105,21 @@ public class Projekt {
 	public Statusliste getStatusliste() {
 		return statusliste;
 	}
-
-	public void setTagListe(ArrayList<String> tagListe)
-	{
-		this.tagListe = tagListe;
-	}
-	public ArrayList<String> getTagListe()
-	{
-		return this.tagListe;
-	}
-
 	
-	
+	public boolean searchTag(String tagname)
+	{
+		boolean found = false; 
+		for(int i=0; i<getTasks().size(); i++)
+		{
+			for(int j=0; j<this.getTasks().get(i).getTags().size(); j++)
+			{
+				if(this.getTasks().get(i).getTags().get(j) == tagname)
+				{
+					System.out.println("Tag \"" + tagname + "\" gefunden in " + this.getTasks().get(i).getName() + ".");
+					found = true;
+				}
+			}
+		}
+		return found;
+	}
 }

@@ -2,8 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-import model.*;
-
 public class Statusliste {
 	private Status head;
 	private int laenge;
