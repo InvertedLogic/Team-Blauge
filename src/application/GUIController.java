@@ -205,6 +205,6 @@ public class GUIController {
     
     @FXML
     void buttonNewTaskPressed(ActionEvent event) {
-
+    	labelProjectname.setT
     }
 }
