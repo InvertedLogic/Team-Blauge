@@ -114,6 +114,10 @@ public class Projectlist {
         }
         return this.ProjectOverview;
     }
+    
+    public void addProjectOverview(XML.Projectlist.ProjectOverview projectOverview) {
+    	
+    }
 
     /**
      * Ruft den Wert der count-Eigenschaft ab.
@@ -207,6 +211,11 @@ public class Projectlist {
         @XmlAttribute(name = "name", required = true)
         protected String name;
 
+        ProjectOverview(String projectname, String description, String key) {
+        	this.setProjectname(projectname);
+        	
+        }
+        
         /**
          * Ruft den Wert der projectname-Eigenschaft ab.
          * 

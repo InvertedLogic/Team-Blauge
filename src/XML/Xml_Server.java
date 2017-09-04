@@ -84,7 +84,7 @@ public class Xml_Server {
         JAXBContext jc = JAXBContext.newInstance(Projectlist.class);
         javax.xml.bind.Unmarshaller unmarshaller = jc.createUnmarshaller();
         Projectlist data = unmarshaller.unmarshal(xsr, Projectlist.class).getValue();
-        ProjectOverview pro = new ProjectOverview();
+        ProjectOverview pro = new ProjectOverview("Testprojekt", "Das ist ein Testprojekt", "blabliblubkey");
         Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
         while (iterator.hasNext()) {
 		    if (name.equals(iterator.next().getName())) {
@@ -170,7 +170,7 @@ public class Xml_Server {
 		ArrayList<Project> proList = new ArrayList<Project>();
 		Projectlist data = unmarshalFromFile("server_projectlist.xml");
 		
-		ProjectOverview pOver = new ProjectOverview();
+		ProjectOverview pOver = new ProjectOverview("Testprojekt", "Das ist ein Testprojekt", "blabliblubkey");
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) 
 		{
@@ -208,7 +208,7 @@ public class Xml_Server {
 		us.setValue("Peter");
 		
 		
-	    ProjectOverview pr = new ProjectOverview();
+	    ProjectOverview pr = new ProjectOverview("Testprojekt", "Das ist ein Testprojekt", "blabliblubkey");
 	    pr.setProjectname("kanban1");
 	    
 	    pr.setDescription("kauabanaga");
