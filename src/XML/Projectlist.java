@@ -77,17 +77,17 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "project"
+    "ProjectOverview"
 })
 @XmlRootElement(name = "projectlist")
 public class Projectlist {
 
-    protected List<Projectlist.Project> project;
+    protected List<Projectlist.ProjectOverview> ProjectOverview;
     @XmlAttribute(name = "count")
     protected Integer count;
 
     /**
-     * Gets the value of the project property.
+     * Gets the value of the ProjectOverview property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
@@ -104,15 +104,15 @@ public class Projectlist {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Projectlist.Project }
+     * {@link Projectlist.ProjectOverview }
      * 
      * 
      */
-    public List<Projectlist.Project> getProject() {
-        if (project == null) {
-            project = new ArrayList<Projectlist.Project>();
+    public List<Projectlist.ProjectOverview> getProjectOverview() {
+        if (ProjectOverview == null) {
+            ProjectOverview = new ArrayList<Projectlist.ProjectOverview>();
         }
-        return this.project;
+        return this.ProjectOverview;
     }
 
     /**
@@ -191,7 +191,7 @@ public class Projectlist {
         "key",
         "userlist"
     })
-    public static class Project {
+    public static class ProjectOverview {
 
         @XmlElement(required = true)
         protected String projectname;
@@ -203,7 +203,7 @@ public class Projectlist {
         @XmlElement(required = true)
         protected String key;
         @XmlElement(required = true)
-        protected Projectlist.Project.Userlist userlist;
+        protected Projectlist.ProjectOverview.Userlist userlist;
         @XmlAttribute(name = "name", required = true)
         protected String name;
 
@@ -308,10 +308,10 @@ public class Projectlist {
          * 
          * @return
          *     possible object is
-         *     {@link Projectlist.Project.Userlist }
+         *     {@link Projectlist.ProjectOverview.Userlist }
          *     
          */
-        public Projectlist.Project.Userlist getUserlist() {
+        public Projectlist.ProjectOverview.Userlist getUserlist() {
             return userlist;
         }
 
@@ -320,10 +320,10 @@ public class Projectlist {
          * 
          * @param value
          *     allowed object is
-         *     {@link Projectlist.Project.Userlist }
+         *     {@link Projectlist.ProjectOverview.Userlist }
          *     
          */
-        public void setUserlist(Projectlist.Project.Userlist value) {
+        public void setUserlist(Projectlist.ProjectOverview.Userlist value) {
             this.userlist = value;
         }
 
@@ -386,7 +386,7 @@ public class Projectlist {
         })
         public static class Userlist {
 
-            protected List<Projectlist.Project.Userlist.User> user;
+            protected List<Projectlist.ProjectOverview.Userlist.User> user;
             @XmlAttribute(name = "count", required = true)
             protected int count;
 
@@ -408,13 +408,13 @@ public class Projectlist {
              * 
              * <p>
              * Objects of the following type(s) are allowed in the list
-             * {@link Projectlist.Project.Userlist.User }
+             * {@link Projectlist.ProjectOverview.Userlist.User }
              * 
              * 
              */
-            public List<Projectlist.Project.Userlist.User> getUser() {
+            public List<Projectlist.ProjectOverview.Userlist.User> getUser() {
                 if (user == null) {
-                    user = new ArrayList<Projectlist.Project.Userlist.User>();
+                    user = new ArrayList<Projectlist.ProjectOverview.Userlist.User>();
                 }
                 return this.user;
             }

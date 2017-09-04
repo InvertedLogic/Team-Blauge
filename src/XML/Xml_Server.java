@@ -7,12 +7,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.*;
 import org.junit.*;
-import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -28,28 +26,30 @@ import org.xml.sax.SAXException;
 
 import com.sun.xml.internal.ws.util.Pool.Unmarshaller;
 
-import XML.Projectlist.Project;
-import XML.Projectlist.Project.Userlist;
-import XML.Projectlist.Project.Userlist.User;
+import XML.Projectlist.ProjectOverview;
+import XML.Projectlist.ProjectOverview.Userlist;
+import XML.Projectlist.ProjectOverview.Userlist.User;
+import XML.Projectlist.ProjectOverview;
 import model.Datum;
 
 @SuppressWarnings("deprecation")
 public class Xml_Server {
 	
-
+	
 	   
-	static class ElementeSpeicherungInListe implements Test_XML.ElementeVerarbeitung
+	   static class ElementeSpeicherungInListe implements Test_XML.ElementeVerarbeitung
 	   {
 	       List elemente = (List) new ArrayList<Object>();
 
-	      @Override
+	      @SuppressWarnings("unchecked")
+		@Override
 	      public void verarbeite( Object element )
 	      {
 	         ((ArrayList<Object>) this.elemente).add( element );
 	      }
 	   }
 
-	public static void addtoprojectList(Project pr)
+	public static void addtoprojectList(ProjectOverview pr)
 	{
 
 		    try {
@@ -65,7 +65,7 @@ public class Xml_Server {
 		
 	}
 	
-	public static Project searchinXML(String name) throws JAXBException, XMLStreamException
+	public static ProjectOverview searchinXML(String name) throws JAXBException, XMLStreamException
 	{
 		XMLInputFactory xif = XMLInputFactory.newFactory();
         StreamSource xml = new StreamSource("server_projectlist.xml");
@@ -84,8 +84,8 @@ public class Xml_Server {
         JAXBContext jc = JAXBContext.newInstance(Projectlist.class);
         javax.xml.bind.Unmarshaller unmarshaller = jc.createUnmarshaller();
         Projectlist data = unmarshaller.unmarshal(xsr, Projectlist.class).getValue();
-        Project pro = new Project();
-        Iterator<Project> iterator = data.getProject().iterator();
+        ProjectOverview pro = new ProjectOverview();
+        Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
         while (iterator.hasNext()) {
 		    if (name.equals(iterator.next().getName())) {
 		         pro =  iterator.next();
@@ -103,9 +103,25 @@ public class Xml_Server {
 	    return (Projectlist) jaxbUnmarshaller.unmarshal(new File(fileName));
 	}
 	
+	private static Project unmarshalFromFileProject(String fileName) throws JAXBException {
+	    JAXBContext jaxbContext = JAXBContext.newInstance(Project.class);
+	    javax.xml.bind.Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+	    return (Project) jaxbUnmarshaller.unmarshal(new File(fileName));
+	}
+	
+	
 	private static void marshalToFile(Projectlist data, String fileName) throws JAXBException
 	{
 	    JAXBContext jaxbContext = JAXBContext.newInstance(Project.class);
+	    Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+	    jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+	    jaxbMarshaller.marshal(data, new File(fileName));
+	}
+	
+	private static void marshalToFileProjectList(Projectlist data, String fileName) throws JAXBException
+	{
+	    JAXBContext jaxbContext = JAXBContext.newInstance(Projectlist.class);
 	    Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
 	    jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -116,7 +132,7 @@ public class Xml_Server {
 	{
 		Projectlist data = unmarshalFromFile("server_projectlist.xml");
 		
-		Iterator<Project> iterator = data.getProject().iterator();
+		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) {
 		    if (deleteword.equals(iterator.next().getName())) {
 		         iterator.remove();
@@ -126,26 +142,60 @@ public class Xml_Server {
 		marshalToFile(data, "server_projectlist.xml");
 		
 	}
-		
+	
+	
 	public static void changeEntryinXML(XMLGregorianCalendar time, String name) throws JAXBException, XMLStreamException
 	{
-		Project pro = searchinXML(name);
+		ProjectOverview pro = searchinXML(name);
 		
 		pro.setLastmod(time);
 		String delete = pro.getName();
 		
 		Projectlist data = unmarshalFromFile("server_projectlist.xml");
 		
-		Iterator<Project> iterator = data.getProject().iterator();
+		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) {
 		    if (delete.equals(iterator.next().getName())) {
 		         iterator.remove();
 		    }
 		}
-		data.getProject().add(pro);
+		data.getProjectOverview().add(pro);
 		
 		marshalToFile(data, "server_projectlist.xml");
 		
+	}
+	
+	public static List<Project> checkProjectListandgiveProjectsback(String userName) throws JAXBException
+	{
+		ArrayList<Project> proList = new ArrayList<Project>();
+		Projectlist data = unmarshalFromFile("server_projectlist.xml");
+		
+		ProjectOverview pOver = new ProjectOverview();
+		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
+		while (iterator.hasNext()) 
+		{
+			
+			Userlist userlist = iterator.next().getUserlist();
+			//User us = new User();
+			
+			Iterator<User> ite = (Iterator<User>) userlist.getUser();
+			
+			while(ite.hasNext())
+			{
+				if(userName.equals(ite.next().getValue()))
+				{
+					Project pro = unmarshalFromFileProject(iterator.next().getProjectname().toString() + ".xml");
+					proList.add(pro);
+					
+		
+				}
+			}
+
+		}
+		
+		
+		
+		return proList;
 	}
 
 
@@ -158,7 +208,7 @@ public class Xml_Server {
 		us.setValue("Peter");
 		
 		
-	    Project pr = new Project();
+	    ProjectOverview pr = new ProjectOverview();
 	    pr.setProjectname("kanban1");
 	    
 	    pr.setDescription("kauabanaga");
