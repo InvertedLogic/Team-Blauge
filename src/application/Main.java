@@ -20,7 +20,6 @@ public class Main extends Application {
 			this.primaryStage = primaryStage;
 			this.primaryStage.setTitle("BLAUGE Kanban");
 			initRoot();
-			// showGUI();
 			showLogin();
 
 		} catch (Exception e) {
@@ -73,8 +72,21 @@ public class Main extends Application {
 		}
 	}
 
+	public void showProjectList() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("projectList.fxml"));
+			AnchorPane GUI = (AnchorPane) loader.load();
+			ProjectListController controller = loader.getController();
+			controller.setMainApp(this);
+			root.setCenter(GUI);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	/*
-	 * Logfunktion, überladen um mit und ohne Label loggen zu können
+	 * Logfunktion, Ueberladen um mit und ohne Label loggen zu koennen
 	 */
 
 	public void log(String text, String label) {

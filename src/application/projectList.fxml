@@ -1,28 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" style="-fx-background-color: #737373;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GUIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" style="-fx-background-color: #737373;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProjectListController">
    <children>
-      <Label fx:id="labelUser" layoutX="876.0" prefHeight="50.0" prefWidth="364.0" style="-fx-background-color: #cdcdcd;" text="Benutzer">
-         <font>
-            <Font name="Roboto Light" size="15.0" />
-         </font></Label>
-      <JFXButton fx:id="buttonLogOut" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1170.0" onAction="#buttonLogOutPressed" prefHeight="50.0" prefWidth="70.0">
+      <AnchorPane layoutX="876.0">
+         <children>
+            <Label fx:id="labelUser" prefHeight="50.0" prefWidth="364.0" style="-fx-background-color: #cdcdcd;" text="Benutzer">
+               <font>
+                  <Font name="Roboto Light" size="15.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="buttonLogOut" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="294.0" onAction="#buttonLogOutPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="ORANGE">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../resources/Icons/log-out.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXTreeTableView fx:id="tableProjectList" layoutY="100.0" prefHeight="620.0" prefWidth="553.0" />
+      <ScrollPane layoutX="593.0" layoutY="100.0" prefHeight="620.0" prefWidth="647.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="780.0" prefWidth="637.0" style="-fx-background-color: #FFA500;">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Projektname:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="textFieldProjectName" layoutX="112.0" layoutY="4.0" prefHeight="29.0" prefWidth="507.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="14.0" layoutY="69.0" text="Projektbeschreibung:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXTextArea fx:id="textAreaProjectDescription" layoutX="14.0" layoutY="90.0" prefHeight="175.0" prefWidth="605.0" />
+                  <Label layoutX="19.0" layoutY="291.0" text="Teilnehmer:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXListView fx:id="listProjectMember" layoutX="14.0" layoutY="317.0" prefHeight="205.0" prefWidth="608.0" />
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="597.0" layoutY="288.0" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373" text="Button">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="buttonAddMember" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/Icons/custom-plus-circled.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+      <JFXButton fx:id="buttonAddProject" contentDisplay="GRAPHIC_ONLY" layoutX="501.0" layoutY="50.0" prefHeight="50.0" prefWidth="50.0" ripplerFill="ORANGE" text="Button">
          <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0">
+            <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/Icons/log-out.png" />
+                  <Image url="@../resources/Icons/custom-plus-circled.png" />
                </image>
             </ImageView>
          </graphic>
+         <font>
+            <Font size="1.0" />
+         </font>
       </JFXButton>
-      <JFXTreeTableView layoutY="100.0" prefHeight="620.0" prefWidth="553.0" />
+      <Label layoutY="-3.0" prefHeight="50.0" prefWidth="277.0" style="-fx-background-color: #FFA500;" text="Projektliste">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="buttonBack" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" layoutY="-3.0" maxHeight="50.0" minHeight="50.0" onAction="#buttonBackPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="#737373" text="Button">
+         <graphic>
+            <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Icons/ios7-custom-back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="1.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

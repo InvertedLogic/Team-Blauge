@@ -17,81 +17,75 @@ import javafx.scene.layout.StackPane;
 public class LoginController {
 
 	private Main main;
-	
-    @FXML
-    private JFXTextField textFieldLogInScreenUsername;
 
-    @FXML
-    private JFXPasswordField textFieldLogInScreenPassword;
+	@FXML
+	private JFXTextField textFieldLogInScreenUsername;
 
-    @FXML
-    private JFXButton buttonLogInScreenLogIn;
+	@FXML
+	private JFXPasswordField textFieldLogInScreenPassword;
 
-    @FXML
-    private JFXButton buttonLogInScreenSettings;
+	@FXML
+	private JFXButton buttonLogInScreenLogIn;
 
-    @FXML
-    private JFXButton buttonLogInScreenInformation;
+	@FXML
+	private JFXButton buttonLogInScreenSettings;
 
-    @FXML
-    void buttonLogInScreenInformationPressed(ActionEvent event) {
+	@FXML
+	private JFXButton buttonLogInScreenInformation;
 
-    }
-    
-    public LoginController() {
-    	
-    	System.out.println("created LoginController");
-    	
-    	
-    	/*
-    	 * Keylistener for calling login function when pressing ENTER in passwordline
-    	 * doesn't work yet, don't know why
-    	 */
-    	JFXPasswordField textFieldLogInScreenPassword = new JFXPasswordField();
-    	/*textFieldLogInScreenPassword.setOnKeyPressed(event -> {
-    		   if(event.getCode() == KeyCode.ENTER){
-    			     checkLoginData();
-    		   }
-    	});*/
-    	
-    	textFieldLogInScreenPassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent ke)
-            {
-                if (ke.getCode().equals(KeyCode.ENTER))
-                {
-                    checkLoginData();
-                }
-            }
-        });
-        
-    }
-    
-    
-    public void setMainApp(Main main) {
+	@FXML
+	void buttonLogInScreenInformationPressed(ActionEvent event) {
+
+	}
+
+	public LoginController() {
+
+		System.out.println("created LoginController");
+
+		/*
+		 * Keylistener for calling login function when pressing ENTER in passwordline
+		 * doesn't work yet, don't know why
+		 */
+		JFXPasswordField textFieldLogInScreenPassword = new JFXPasswordField();
+		/*
+		 * textFieldLogInScreenPassword.setOnKeyPressed(event -> { if(event.getCode() ==
+		 * KeyCode.ENTER){ checkLoginData(); } });
+		 */
+
+		textFieldLogInScreenPassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent ke) {
+				if (ke.getCode().equals(KeyCode.ENTER)) {
+					checkLoginData();
+				}
+			}
+		});
+
+	}
+
+	public void setMainApp(Main main) {
 		this.main = main;
 	}
 
-    
-    
-    @FXML
-    void buttonLogInScreenLogInPressed(ActionEvent event) {
-    	checkLoginData();
-    }
-    
-    private String username = "fiete";
-    private String passwort = "123";
-    
-    public void checkLoginData() {
-    	main.log("Check Login");
-	    if(textFieldLogInScreenUsername.getText().equals(username)  && textFieldLogInScreenPassword.getText().equals(passwort)) {
+	@FXML
+	void buttonLogInScreenLogInPressed(ActionEvent event) {
+		checkLoginData();
+	}
+
+	private String username = "fiete";
+	private String passwort = "123";
+
+	public void checkLoginData() {
+		main.log("Check Login");
+		if (textFieldLogInScreenUsername.getText().equals(username)
+				&& textFieldLogInScreenPassword.getText().equals(passwort)) {
 			main.showGUI();
 		}
-    }
+	}
 
-    @FXML
-    void buttonLogInScreenSettingsPressed(ActionEvent event) {
+	@FXML
+	void buttonLogInScreenSettingsPressed(ActionEvent event) {
 
-    }
+	}
 
 }

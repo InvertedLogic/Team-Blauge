@@ -15,113 +15,116 @@ import javafx.scene.control.MenuButton;
 
 public class GUIController {
 	@FXML
-    private Label labelProjectname;
+	private Label labelProjectname;
 
-    @FXML
-    private Label labelProjectinformation;
+	@FXML
+	private Label labelProjectinformation;
 
-    @FXML
-    private Label labelUser;
+	@FXML
+	private Label labelUser;
 
-    @FXML
-    private MenuButton menuButtonFilter;
+	@FXML
+	private MenuButton menuButtonFilter;
 
-    @FXML
-    private Label labelTaskname;
+	@FXML
+	private Label labelTaskname;
 
-    @FXML
-    private Label labelAuthor;
+	@FXML
+	private Label labelAuthor;
 
-    @FXML
-    private Label labelStatus;
+	@FXML
+	private Label labelStatus;
 
-    @FXML
-    private Label labelColor;
+	@FXML
+	private Label labelColor;
 
-    @FXML
-    private Label labelDescription;
+	@FXML
+	private Label labelDescription;
 
-    @FXML
-    private Label labelTags;
+	@FXML
+	private Label labelTags;
 
-    @FXML
-    private Label labelActualAuthor;
+	@FXML
+	private Label labelActualAuthor;
 
-    @FXML
-    private Label labelActualStatus;
+	@FXML
+	private Label labelActualStatus;
 
-    @FXML
-    private JFXTextField textFieldTaskname;
+	@FXML
+	private JFXTextField textFieldTaskname;
 
-    @FXML
-    private JFXColorPicker ColorPicker;
+	@FXML
+	private JFXColorPicker ColorPicker;
 
-    @FXML
-    private JFXTextArea textAreaDescription;
+	@FXML
+	private JFXTextArea textAreaDescription;
 
-    @FXML
-    private JFXListView<?> listViewTags;
+	@FXML
+	private JFXListView<?> listViewTags;
 
-    @FXML
-    private Label labelComments;
+	@FXML
+	private Label labelComments;
 
-    @FXML
-    private JFXListView<?> listViewComments;
+	@FXML
+	private JFXListView<?> listViewComments;
 
-    @FXML
-    private JFXTextField textFieldTags;
+	@FXML
+	private JFXTextField textFieldTags;
 
-    @FXML
-    private JFXButton buttonAddTag;
+	@FXML
+	private JFXButton buttonAddTag;
 
-    @FXML
-    private JFXTextField textFieldComments;
+	@FXML
+	private JFXTextField textFieldComments;
 
-    @FXML
-    private JFXButton buttonAddComment;
+	@FXML
+	private JFXButton buttonAddComment;
 
-    @FXML
-    private JFXButton buttonProjectselection;
+	@FXML
+	private JFXButton buttonProjectselection;
 
-    @FXML
-    private JFXButton buttonLogOut;
+	@FXML
+	private JFXButton buttonLogOut;
 
-    @FXML
-    private JFXButton buttonProceed;
+	@FXML
+	private JFXButton buttonProceed;
 
-    @FXML
-    private JFXButton buttonReturn;
+	@FXML
+	private JFXButton buttonReturn;
 
-    @FXML
-    private JFXButton buttonInformation;
+	@FXML
+	private JFXButton buttonInformation;
 
-    @FXML
-    private JFXButton buttonTags;
+	@FXML
+	private JFXButton buttonTags;
 
-    @FXML
-    private JFXButton buttonComments;
-    
-    @FXML
-    private JFXButton buttonNewTask;
+	@FXML
+	private JFXButton buttonComments;
 
-    @FXML
-    private Label labelToDo;
+	@FXML
+	private JFXButton buttonNewTask;
 
-    @FXML
-    private Label labelDoing;
+	@FXML
+	private JFXButton btn_projectList;
+	
+	@FXML
+	private Label labelToDo;
 
-    @FXML
-    private Label labelFinished;
+	@FXML
+	private Label labelDoing;
 
-    @FXML
-    private JFXMasonryPane mansoryPaneToDo;
+	@FXML
+	private Label labelFinished;
 
-    @FXML
-    private JFXMasonryPane mansoryPaneDoing;
+	@FXML
+	private JFXMasonryPane mansoryPaneToDo;
 
-    @FXML
-    private JFXMasonryPane mansoryPaneFinished;
+	@FXML
+	private JFXMasonryPane mansoryPaneDoing;
 
+	@FXML
+	private JFXMasonryPane mansoryPaneFinished;
+	
 	private Main main;
 
 	private JFXColorPicker colorPicker; // https://github.com/jfoenixadmin/JFoenix/issues/408
@@ -134,59 +137,59 @@ public class GUIController {
 			// nothing yet
 		});
 		this.colorPicker.valueProperty().addListener((observable, oldValue, newValue) -> {
-
 			// newValue is selected color
 
 		});
-
+		
+		
 	}
 
 	public void setMainApp(Main main) {
 		this.main = main;
 	}
-	
+
 	@FXML
-    void ColorPickerSelectionChanged(ActionEvent event) {
+	void ColorPickerSelectionChanged(ActionEvent event) {
 
-    }
+	}
 
-    @FXML
-    void buttonCommentsPressed(ActionEvent event) {
+	@FXML
+	void buttonCommentsPressed(ActionEvent event) {
 
-    }
+	}
 
-    @FXML
-    void buttonInformationPressed(ActionEvent event) {
+	@FXML
+	void buttonInformationPressed(ActionEvent event) {
 
-    }
+	}
 
-    @FXML
-    void buttonLogOutPressed(ActionEvent event) {
-    	main.showLogin();
-    }
+	@FXML
+	void buttonLogOutPressed(ActionEvent event) {
+		main.showLogin();
+	}
 
-    @FXML
-    void buttonProceedPressed(ActionEvent event) {
+	@FXML
+	void buttonProceedPressed(ActionEvent event) {
 
-    }
+	}
 
-    @FXML
-    void buttonProjectselectionPressed(ActionEvent event) {
+	@FXML
+	void buttonProjectselectionPressed(ActionEvent event) {
+		main.showProjectList();
+	}
 
-    }
+	@FXML
+	void buttonReturnPressed(ActionEvent event) {
 
-    @FXML
-    void buttonReturnPressed(ActionEvent event) {
+	}
 
-    }
+	@FXML
+	void buttonTagsPressed(ActionEvent event) {
 
-    @FXML
-    void buttonTagsPressed(ActionEvent event) {
+	}
 
-    }
-    
-    @FXML
-    void buttonNewTaskPressed(ActionEvent event) {
+	@FXML
+	void buttonNewTaskPressed(ActionEvent event) {
 
-    }
+	}
 }
