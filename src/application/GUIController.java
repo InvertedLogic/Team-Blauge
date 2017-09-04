@@ -274,10 +274,11 @@ public class GUIController {
     	//Random r = new Random();
     	for (int i = 0; i < 10; i++){
     		Label lbl = new Label();
-    		lbl.setPrefSize(250, 250);
+    		lbl.setPrefSize(100, 100);
     		lbl.setStyle("-fx-background-color: white;");
     		lbl.setText("Ich bin Post-It " + i);
     		mansoryPaneToDo.getChildren().add(lbl);
+    		System.out.println("LOL");
     	}
     }
 }
