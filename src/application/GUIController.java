@@ -235,9 +235,12 @@ public class GUIController {
     		 * ändere das icon des buttons zu 'Compose' funktioniert noch nicht
     		 */
         	File f = new File("/src/resources/Icons/compose.png");
-        	Image img = new Image(f.toURI().toString(), true);
-        	buttonEditTaskNameIcon.setImage(img);
+        	//Image img = new Image(f.toURI().toString(), true);
+        	//buttonEditTaskNameIcon.setImage(img);
         	System.out.println("Button zu compose.png geaendert");
+        	
+        	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:/src/resources/Icons/compose.png"));
+        	buttonEditTaskName.setGraphic(buttonEditTaskNameIcon2);
         		
     	}
     	else {
@@ -256,8 +259,8 @@ public class GUIController {
 	                     * ändere Buttonicon wieder zu stift funktioniert noch nicht
 	                     * wenn >TAB< gedrueckt waehrend im Textfield soll fokus auf Button gelegt werden
 	                     */ 
-	                	File f = new File("/src/resources/Icons/compose.png");
-	                	Image img = new Image("file:\\src\\resources\\Icons\\compose.png");
+	                	File f = new File("./src/resources/Icons/compose.png");
+	                	Image img = new Image("file:./src/resources/Icons/compose.png");
 	                	buttonEditTaskNameIcon.setImage(img);
 	                	System.out.println("Button zu Compose.png geaendert");
 	                	
@@ -274,9 +277,12 @@ public class GUIController {
     		textFieldTaskname.editableProperty().set(true);
     		
     		File f = new File("file:\\src\\resources\\Icons\\save.png");
-        	Image img = new Image(f.toURI().toString(), true);
-        	buttonEditTaskNameIcon.setImage(img);
+        	//Image img = new Image(f.toURI().toString(), true);
+        	//buttonEditTaskNameIcon.setImage(img);
         	System.out.println("Button zu save.png geaendert");
+        	
+        	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:.\\src\\resources\\Icons\\save.png"));
+        	buttonEditTaskName.setGraphic(buttonEditTaskNameIcon2);
     		
     		/*
     		 * TODO:
