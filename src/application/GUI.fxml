@@ -19,36 +19,25 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" style="-fx-background-color: #737373;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GUIController">
    <children>
-      <Label fx:id="labelProjectname" prefHeight="50.0" prefWidth="277.0" style="-fx-background-color: #FFA500;" text="    Projektname">
+      <Label fx:id="labelProjectname" prefHeight="50.0" prefWidth="277.0" style="-fx-background-color: #FFA500;" text="Projektname">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font></Label>
-      <JFXButton fx:id="buttonProjectselection" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" onAction="#buttonProjectselectionPressed" prefHeight="50.0" prefWidth="70.0">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0">
-               <image>
-                  <Image url="@../resources/Icons/ios7-browsers.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <Label fx:id="labelProjectinformation" layoutX="277.0" prefHeight="50.0" prefWidth="599.0" style="-fx-background-color: #969696;" text="    Projektinformationen">
+      <Label fx:id="labelProjectinformation" layoutX="277.0" prefHeight="50.0" prefWidth="599.0" style="-fx-background-color: #969696;" text="Projektinformationen">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font></Label>
-      <Label fx:id="labelUser" layoutX="876.0" prefHeight="50.0" prefWidth="364.0" style="-fx-background-color: #cdcdcd;" text="    Benutzer">
+      <Label fx:id="labelUser" layoutX="876.0" prefHeight="50.0" prefWidth="364.0" style="-fx-background-color: #cdcdcd;" text="Benutzer">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font></Label>
-      <JFXButton fx:id="buttonLogOut" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1170.0" onAction="#buttonLogOutPressed" prefHeight="50.0" prefWidth="70.0">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0">
-               <image>
-                  <Image url="@../resources/Icons/log-out.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
+      <MenuButton fx:id="menuButtonFilter" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Filter">
+         <items>
+            <CheckMenuItem mnemonicParsing="false" text="Meine" />
+            <CheckMenuItem mnemonicParsing="false" text="A" />
+            <CheckMenuItem mnemonicParsing="false" text="B" />
+         </items>
+      </MenuButton>
       <ScrollPane layoutX="876.0" layoutY="100.0" prefHeight="620.0" prefWidth="364.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="349.0" style="-fx-background-color: #FFA500;">
@@ -100,13 +89,13 @@
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="textFieldTaskname" focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="27.0" prefWidth="217.0" style="-fx-background-color: orange;">
+                  <JFXTextField fx:id="textFieldTaskname" focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="25.0" prefWidth="260.0" style="-fx-background-color: white;">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
                   <JFXColorPicker fx:id="ColorPicker" layoutX="85.0" layoutY="155.0" onAction="#ColorPickerSelectionChanged" prefHeight="25.0" />
-                  <JFXTextArea fx:id="textAreaDescription" focusColor="#b71c1c" layoutX="5.0" layoutY="230.0" prefHeight="150.0" prefWidth="339.0">
+                  <JFXTextArea fx:id="textAreaDescription" focusColor="#b71c1c" layoutY="218.0" prefHeight="150.0" prefWidth="339.0">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
@@ -130,7 +119,7 @@
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton fx:id="buttonAddTag" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="421.0" prefHeight="25.0" prefWidth="25.0">
+                  <JFXButton fx:id="buttonAddTag" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="421.0" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
@@ -144,7 +133,7 @@
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
-                  <JFXButton fx:id="buttonAddComment" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="586.0" prefHeight="25.0" prefWidth="25.0">
+                  <JFXButton fx:id="buttonAddComment" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="586.0" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
@@ -153,27 +142,29 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="buttonEditTaskName" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="1.0" onAction="#buttonEditTaskNamePressed" prefHeight="25.0" prefWidth="25.0">
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0">
-                           <image>
-                              <Image url="@../resources/Icons/compose.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
-      <MenuButton fx:id="menuButtonFilter" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Filter">
-         <items>
-            <CheckMenuItem mnemonicParsing="false" text="Meine" />
-            <CheckMenuItem mnemonicParsing="false" text="A" />
-            <CheckMenuItem mnemonicParsing="false" text="B" />
-         </items>
-      </MenuButton>
-      <JFXButton fx:id="buttonProceed" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="946.0" layoutY="50.0" onAction="#buttonProceedPressed" prefHeight="50.0" prefWidth="70.0">
+      <JFXButton fx:id="buttonProjectselection" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" onAction="#buttonProjectselectionPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="#737373">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+               <image>
+                  <Image url="@../resources/Icons/ios7-browsers.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="buttonLogOut" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="1170.0" onAction="#buttonLogOutPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="ORANGE">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+               <image>
+                  <Image url="@../resources/Icons/log-out.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="buttonProceed" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="946.0" layoutY="50.0" onAction="#buttonProceedPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="ORANGE">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
@@ -182,16 +173,8 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="buttonReturn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="876.0" layoutY="50.0" onAction="#buttonReturnPressed" prefHeight="50.0" prefWidth="70.0">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0">
-               <image>
-                  <Image url="@../resources/Icons/ios7-custom-back.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="buttonInformation" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="100.0" onAction="#buttonInformationPressed" prefHeight="50.0" prefWidth="50.0">
+      <JFXButton fx:id="buttonReturn" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="876.0" layoutY="50.0" onAction="#buttonReturnPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="ORANGE" />
+      <JFXButton fx:id="buttonInformation" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="100.0" onAction="#buttonInformationPressed" prefHeight="50.0" prefWidth="50.0" ripplerFill="ORANGE">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
@@ -200,7 +183,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="buttonTags" alignment="CENTER" cache="true" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="150.0" onAction="#buttonTagsPressed" prefHeight="50.0" prefWidth="50.0">
+      <JFXButton fx:id="buttonTags" alignment="CENTER" cache="true" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="150.0" onAction="#buttonTagsPressed" prefHeight="50.0" prefWidth="50.0" ripplerFill="#ffa100">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
@@ -209,7 +192,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="buttonComments" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="200.0" onAction="#buttonCommentsPressed" prefHeight="50.0" prefWidth="50.0">
+      <JFXButton fx:id="buttonComments" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="200.0" onAction="#buttonCommentsPressed" prefHeight="50.0" prefWidth="50.0" ripplerFill="#ffa100">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0">
                <image>
@@ -252,14 +235,19 @@
       <JFXMasonryPane fx:id="mansoryPaneToDo" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
       <JFXMasonryPane fx:id="mansoryPaneDoing" layoutX="277.0" layoutY="130.0" prefHeight="590.0" prefWidth="276.0" style="-fx-background-color: #888888;" />
       <JFXMasonryPane fx:id="mansoryPaneFinished" layoutX="553.0" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
-      <JFXButton fx:id="buttonNewTask" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="780.0" layoutY="50.0" onAction="#buttonNewTaskPressed" prefHeight="50.0" prefWidth="50.0">
+      <JFXButton fx:id="buttonNewTask" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="780.0" layoutY="50.0" onAction="#buttonNewTaskPressed" prefHeight="50.0" prefWidth="50.0" ripplerFill="ORANGE">
          <graphic>
-            <ImageView fitHeight="25.0" fitWidth="25.0">
+            <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
-                  <Image url="@../resources/Icons/custom-plus-circled.png" />
+                  <Image url="@../resources/Icons/plus-circled.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="891.0" layoutY="55.0">
+         <image>
+            <Image url="@../resources/Icons/ios7-custom-back.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -1,11 +1,7 @@
 package application;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.util.Random;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXColorPicker;
@@ -27,7 +23,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.stage.FileChooser;
 
 public class GUIController {
 	@FXML
@@ -232,16 +227,8 @@ public class GUIController {
         	saveEnteredTaskname(textFieldTaskname.getText());
     		/*
     		 * TODO:
-    		 * ändere das icon des buttons zu 'Compose' funktioniert noch nicht
+    		 * ändere das icon des buttons wieder zu 'Stift'
     		 */
-        	File f = new File("/src/resources/Icons/compose.png");
-        	//Image img = new Image(f.toURI().toString(), true);
-        	//buttonEditTaskNameIcon.setImage(img);
-        	System.out.println("Button zu compose.png geaendert");
-        	
-        	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:/src/resources/Icons/compose.png"));
-        	buttonEditTaskName.setGraphic(buttonEditTaskNameIcon2);
-        		
     	}
     	else {
     		
@@ -256,33 +243,18 @@ public class GUIController {
 	                	
 	                    /*
 	                     * TODO:
-	                     * ändere Buttonicon wieder zu stift funktioniert noch nicht
+	                     * ändere Buttonicon wieder zu stift
 	                     * wenn >TAB< gedrueckt waehrend im Textfield soll fokus auf Button gelegt werden
 	                     */ 
-	                	File f = new File("./src/resources/Icons/compose.png");
-	                	Image img = new Image("file:./src/resources/Icons/compose.png");
+	                	//File file = new File("/resources/Icons/save.png");
+	                	Image img = new Image("./src/main/resources/Icons/save.png",true);
 	                	buttonEditTaskNameIcon.setImage(img);
-	                	System.out.println("Button zu Compose.png geaendert");
-	                	
-
-	                	System.out.println(f.getAbsolutePath());
-	                	System.out.println(f.toURI().toString());
-	                	
-
-	                	
+	                	//buttonEditTaskNameIcon.getImage();
 	                }
 	            } 
 	        });
     	
     		textFieldTaskname.editableProperty().set(true);
-    		
-    		File f = new File("file:\\src\\resources\\Icons\\save.png");
-        	//Image img = new Image(f.toURI().toString(), true);
-        	//buttonEditTaskNameIcon.setImage(img);
-        	System.out.println("Button zu save.png geaendert");
-        	
-        	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:.\\src\\resources\\Icons\\save.png"));
-        	buttonEditTaskName.setGraphic(buttonEditTaskNameIcon2);
     		
     		/*
     		 * TODO:
@@ -299,6 +271,14 @@ public class GUIController {
     
     @FXML
     void buttonNewTaskPressed(ActionEvent event) {
-    	labelProjectname.setText("    Neuer Task?");
+    	//Random r = new Random();
+    	for (int i = 0; i < 10; i++){
+    		Label lbl = new Label();
+    		lbl.setPrefSize(100, 100);
+    		lbl.setStyle("-fx-background-color: white;");
+    		lbl.setText("Ich bin Post-It " + i);
+    		mansoryPaneToDo.getChildren().add(lbl);
+    		System.out.println("LOL");
+    	}
     }
 }

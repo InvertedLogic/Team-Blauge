@@ -1,11 +1,15 @@
 package application;
 
 import java.io.File;
+<<<<<<< HEAD
+import java.util.Random;
+=======
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+>>>>>>> a0434d06ab01dd5d9c1c6d87a1ab8c59509af512
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXColorPicker;
@@ -299,6 +303,14 @@ public class GUIController {
     
     @FXML
     void buttonNewTaskPressed(ActionEvent event) {
-    	labelProjectname.setText("    Neuer Task?");
+    	//Random r = new Random();
+    	for (int i = 0; i < 10; i++){
+    		Label lbl = new Label();
+    		lbl.setPrefSize(100, 100);
+    		lbl.setStyle("-fx-background-color: white;");
+    		lbl.setText("Ich bin Post-It " + i);
+    		mansoryPaneToDo.getChildren().add(lbl);
+    		System.out.println("LOL");
+    	}
     }
 }
