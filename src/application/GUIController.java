@@ -1,6 +1,7 @@
 package application;
 
 import java.io.File;
+import java.util.Random;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXColorPicker;
@@ -270,6 +271,13 @@ public class GUIController {
     
     @FXML
     void buttonNewTaskPressed(ActionEvent event) {
-    	labelProjectname.setText("    Neuer Task?");
+    	//Random r = new Random();
+    	for (int i = 0; i < 10; i++){
+    		Label lbl = new Label();
+    		lbl.setPrefSize(250, 250);
+    		lbl.setStyle("-fx-background-color: white;");
+    		lbl.setText("Ich bin Post-It " + i);
+    		mansoryPaneToDo.getChildren().add(lbl);
+    	}
     }
 }
