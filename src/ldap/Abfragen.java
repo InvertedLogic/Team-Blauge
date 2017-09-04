@@ -13,24 +13,11 @@ public class Abfragen {
 		boolean authenticate = false;
 		
 		LdapConnectionClient con = new LdapConnectionClient();
-		String[] returningAttributes = new String[] {"userPassword"};
- 		NamingEnumeration<SearchResult> results = con.search("ou=accounts", "uid=" + username, returningAttributes);
-		
-		try {
+ 		NamingEnumeration<SearchResult> results = con.compare("uid=" + username + ", ou=accounts", "(userPassword={0})", passwort);
+ 		try {
 			if(results.hasMore())
 			{
-				SearchResult sr = (SearchResult) results.next();
-				
-				String pw = "";
-				if(sr.getAttributes().get("userPassword") != null)
-				{
-					pw = sr.getAttributes().get("userPassword").get().toString();
-				}
-				
-				if(pw.equals(passwort))
-				{
-					authenticate = true;
-				}
+				authenticate = true;
 			}
 		} catch (NamingException e) {
 			e.printStackTrace();

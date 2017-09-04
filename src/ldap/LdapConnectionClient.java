@@ -91,4 +91,41 @@ public class LdapConnectionClient {
 		return results;
 	}
 	
+	/**
+	 * Search function.
+	 * 
+	 * @param base
+	 * @param filter
+	 * @param returningAttributes
+	 * 
+	 * @return
+	 */
+	public NamingEnumeration<SearchResult> compare(String base, String filter, String passwort) {
+		
+		InitialLdapContext ctx = null;
+		try {
+			ctx = setUpLdapContext();
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+
+		byte[] key = passwort.getBytes();
+		
+		SearchControls ctls = new SearchControls();
+		ctls.setSearchScope(SearchControls.OBJECT_SCOPE);
+		ctls.setReturningAttributes(new String[0]);
+
+		NamingEnumeration<SearchResult> results = null;
+		try {
+			results = ctx.search(base, filter, new Object[]{key}, ctls);
+			ctx.close();
+		} catch (NamingException e) {
+			e.printStackTrace();
+		} catch (NullPointerException x) {
+			x.printStackTrace();
+		}
+		
+		return results;
+	}
+	
 }
