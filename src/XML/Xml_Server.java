@@ -29,33 +29,21 @@ import com.sun.xml.internal.ws.util.Pool.Unmarshaller;
 import XML.Projectlist.ProjectOverview;
 import XML.Projectlist.ProjectOverview.Userlist;
 import XML.Projectlist.ProjectOverview.Userlist.User;
+import XML.Project;
+import XML.Project.Statuslist;
+import XML.Project.Tasklist;
+import XML.Project.Tasklist.Task;
 
 
 public class Xml_Server {
 	
 	
 	   
-	   static class ElementeSpeicherungInListe implements Test_XML.ElementeVerarbeitung
-	   {
-	       List elemente = (List) new ArrayList<Object>();
-
-	      @SuppressWarnings("unchecked")
-		@Override
-	      public void verarbeite( Object element )
-	      {
-	         ((ArrayList<Object>) this.elemente).add( element );
-	      }
-	   }
-
-	public static void addtoprojectList(ProjectOverview pr) throws JAXBException
+     
+   //fügt neues Projekt an die Projektlist und erzeugt neue XML Datei
+	public static void addtoprojectList(Project pr, String comment) throws JAXBException
 	{
-
-		
-				Projectlist data = unmarshalFromFile("projectlist.xml");
-				
-				data.addProjectOverview(pr);
-				
-				
+	
 		    try {
 		        JAXBContext jc = JAXBContext.newInstance(Project.class);
 		        javax.xml.bind.Marshaller marshaller = jc.createMarshaller();
@@ -66,13 +54,23 @@ public class Xml_Server {
 		    } catch (JAXBException e) {
 		        e.printStackTrace();
 		    }
+		    
+
+			Projectlist data = unmarshalFromFile("server_projectlist.xml");
+			
+			ProjectOverview over = new ProjectOverview(pr.getProjectname(), comment, null);
+			
+			data.addProjectOverview(over);
+			
+			marshalToFile(data, "server_projectlist.xml");
+
 		
 	}
-	
+  // in Projectlist suchen
 	public static ProjectOverview searchinXML(String name) throws JAXBException, XMLStreamException
 	{
 		XMLInputFactory xif = XMLInputFactory.newFactory();
-        StreamSource xml = new StreamSource("projectlist.xml");
+        StreamSource xml = new StreamSource("server_projectlist.xml");
         XMLStreamReader xsr = xif.createXMLStreamReader(xml);
 
         
@@ -101,18 +99,19 @@ public class Xml_Server {
 		
 	}
 	
+	
+	// Projectlist aus XML erzeugen
 	private static Projectlist unmarshalFromFile(String fileName) throws JAXBException {
 	    JAXBContext jaxbContext = JAXBContext.newInstance(Projectlist.class);
 	    javax.xml.bind.Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 	    return (Projectlist) jaxbUnmarshaller.unmarshal(new File(fileName));
 	}
-	
+	// 
 	private static Project unmarshalFromFileProject(String fileName) throws JAXBException {
 	    JAXBContext jaxbContext = JAXBContext.newInstance(Project.class);
 	    javax.xml.bind.Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 	    return (Project) jaxbUnmarshaller.unmarshal(new File(fileName));
 	}
-	
 	
 	private static void marshalToFile(Projectlist data, String fileName) throws JAXBException
 	{
@@ -132,18 +131,19 @@ public class Xml_Server {
 	    jaxbMarshaller.marshal(data, new File(fileName));
 	}
 	
+	
 	private static void deleteEntry(String deleteword) throws JAXBException
 	{
-		Projectlist data = unmarshalFromFile("projectlist.xml");
+		Projectlist data = unmarshalFromFile("server_projectlist.xml");
 		
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) {
-		    if (deleteword.equals(iterator.next().getName())) {
+		    if (deleteword.equals(iterator.next().getProjectname())) {
 		         iterator.remove();
 		    }
 		}
 		
-		marshalToFile(data, "projectlist.xml");
+		marshalToFile(data, "server_projectlist.xml");
 		
 	}
 	
@@ -155,7 +155,7 @@ public class Xml_Server {
 		pro.setLastmod(time);
 		String delete = pro.getName();
 		
-		Projectlist data = unmarshalFromFile("projectlist.xml");
+		Projectlist data = unmarshalFromFile("server_projectlist.xml");
 		
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) {
@@ -165,7 +165,7 @@ public class Xml_Server {
 		}
 		data.getProjectOverview().add(pro);
 		
-		marshalToFile(data, "projectlist.xml");
+		marshalToFile(data, "server_projectlist.xml");
 		
 	}
 	
@@ -207,6 +207,10 @@ public class Xml_Server {
 	
 	public static void main(String[] args) throws Exception 
 	{
+		Task task = new Task(null, null, null, 0, null)
+		
+		Project pro = new Project(null, null, null, null, null)
+		
 		User us = new User();
 		us.setIsAdmin(false);
 		us.setValue("Peter");
@@ -224,11 +228,7 @@ public class Xml_Server {
 	    
 	    
 
-		addtoprojectList(pr);
-		
-	//	Project pro = searchinXML("projectname", "projectname" );
-		
-	//.out.println(pro.getName());
+
 		
 	}
 	 
