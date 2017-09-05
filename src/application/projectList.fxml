@@ -42,7 +42,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="textFieldProjectName" layoutX="112.0" layoutY="4.0" prefHeight="29.0" prefWidth="507.0">
+                  <JFXTextField fx:id="textFieldProjectName" layoutX="112.0" layoutY="4.0" prefHeight="29.0" prefWidth="475.0">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -67,6 +67,24 @@
                         <ImageView fx:id="buttonAddMember" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/Icons/custom-plus-circled.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonEditProjectName" contentDisplay="GRAPHIC_ONLY" layoutX="589.0" layoutY="1.0" onAction="#buttonEditProjectNamePressed" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373" text="SaveProjectName">
+                     <graphic>
+                        <ImageView fx:id="buttonEditProjectNameIcon" fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../resources/Icons/compose.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonEditProjectDescription" contentDisplay="GRAPHIC_ONLY" layoutX="589.0" layoutY="61.0" onAction="#buttonEditProjectDescriptionPressed" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373" text="SaveTaskName">
+                     <graphic>
+                        <ImageView fx:id="buttonEditProjectDescriptionIcon" fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../resources/Icons/compose.png" />
                            </image>
                         </ImageView>
                      </graphic>

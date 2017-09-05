@@ -4,16 +4,13 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
-import javafx.beans.binding.DoubleBinding;
-import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.StackPane;
+
 
 public class LoginController {
 
@@ -88,7 +85,7 @@ public class LoginController {
     }
     
     private String username = "fiete";
-    private String passwort = "123";
+    //private String passwort = "123";
     
     public void checkLoginData() {
     	main.log("Check Login");

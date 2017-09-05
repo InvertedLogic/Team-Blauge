@@ -92,17 +92,35 @@
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="textFieldTaskname" focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="27.0" prefWidth="219.0" style="-fx-background-color: white;">
+                  <JFXTextField fx:id="textFieldTaskname" focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="27.0" prefWidth="219.0" style="-fx-background-color: orange;" text="TaskName">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextField>
+                  <JFXButton fx:id="buttonEditTaskName" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="1.0" onAction="#buttonEditTaskNamePressed" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373" text="SaveTaskName">
+                     <graphic>
+                        <ImageView fx:id="buttonEditTaskNameIcon" fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../resources/Icons/compose.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
                   <JFXColorPicker fx:id="ColorPicker" layoutX="85.0" layoutY="155.0" onAction="#ColorPickerSelectionChanged" prefHeight="25.0" />
-                  <JFXTextArea fx:id="textAreaDescription" focusColor="#b71c1c" layoutY="218.0" prefHeight="150.0" prefWidth="339.0">
+                  <JFXTextArea fx:id="textAreaDescription" focusColor="#b71c1c" layoutX="5.0" layoutY="236.0" prefHeight="150.0" prefWidth="339.0" stylesheets="@application.css" text="Description">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </JFXTextArea>
+                  <JFXButton fx:id="buttonEditComments" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="201.0" onAction="#buttonEditDescriptionPressed" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373" text="SaveDescription">
+                     <graphic>
+                        <ImageView fx:id="buttonEditDescriptionIcon" fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../resources/Icons/compose.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
                   <JFXListView fx:id="listViewTags" layoutX="5.0" layoutY="455.0" prefHeight="100.0" prefWidth="339.0" />
                   <Label fx:id="labelComments" layoutX="5.0" layoutY="565.0" prefHeight="25.0" prefWidth="120.0" text="Kommentare:">
                      <font>
@@ -141,15 +159,6 @@
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
                               <Image url="@../resources/Icons/Forward-512.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton fx:id="buttonEditTaskName" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="1.0" onAction="#buttonEditTaskNamePressed" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373">
-                     <graphic>
-                        <ImageView fx:id="buttonEditTaskNameIcon" fitHeight="25.0" fitWidth="25.0">
-                           <image>
-                              <Image url="@../resources/Icons/plus-round.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -239,7 +248,7 @@
             <Font name="Roboto Light" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="labelFinished" alignment="CENTER" layoutX="544.0" layoutY="100.0" prefHeight="30.0" prefWidth="272.0" style="-fx-background-color: #969696;" text="Finished">
+      <Label fx:id="labelFinished" alignment="CENTER" layoutX="544.0" layoutY="100.0" prefHeight="30.0" prefWidth="286.0" style="-fx-background-color: #969696;" text="Finished">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font>

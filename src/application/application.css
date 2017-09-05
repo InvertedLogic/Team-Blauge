@@ -2,3 +2,19 @@
 jfxbutton {
     
 }
+
+.backgroundOrange {
+	-fx-control-inner-background: orange;
+}
+
+.backgroundWhite {
+	-fx-control-inner-background: white;
+}
+
+.text-area {
+    text-area-background: orange ;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background ;
+}
