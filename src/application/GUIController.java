@@ -214,7 +214,7 @@ public class GUIController {
 
     @FXML
     void buttonProjectselectionPressed(ActionEvent event) {
-
+    	main.showProjectList();
     }
 
     @FXML
