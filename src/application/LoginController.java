@@ -45,20 +45,6 @@ public class LoginController {
     	
     	System.out.println("created LoginController");
     	
-    	//infoLabelLogInScreen.setText("");
-    	
-    	
-    	/*
-    	 * Keylistener for calling login function when pressing ENTER in passwordline
-    	 * doesn't work yet, don't know why
-    	 */
-    	//JFXPasswordField textFieldLogInScreenPassword = new JFXPasswordField();
-    	/*textFieldLogInScreenPassword.setOnKeyPressed(event -> {
-    		   if(event.getCode() == KeyCode.ENTER){
-    			     checkLoginData();
-    		   }
-    	});*/
-    	
     	
         
     }
@@ -70,7 +56,18 @@ public class LoginController {
             {
                 if (ke.getCode().equals(KeyCode.ENTER))
                 {
-                    checkLoginData();
+                	checkLoginData();
+                }
+            }
+        });
+    	
+    	this.textFieldLogInScreenUsername.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke)
+            {
+                if (ke.getCode().equals(KeyCode.ENTER))
+                {
+                	checkLoginData();
                 }
             }
         });

@@ -89,7 +89,7 @@
                         <Font name="Roboto Light" size="15.0" />
                      </font>
                   </Label>
-                  <JFXTextField fx:id="textFieldTaskname" focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="25.0" prefWidth="260.0" style="-fx-background-color: white;">
+                  <JFXTextField fx:id="textFieldTaskname" focusColor="#b71c1c" layoutX="85.0" layoutY="5.0" prefHeight="27.0" prefWidth="219.0" style="-fx-background-color: white;">
                      <font>
                         <Font name="Roboto Light" size="15.0" />
                      </font>
@@ -138,6 +138,15 @@
                         <ImageView fitHeight="25.0" fitWidth="25.0">
                            <image>
                               <Image url="@../resources/Icons/Forward-512.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonEditTaskName" contentDisplay="GRAPHIC_ONLY" layoutX="305.0" layoutY="1.0" prefHeight="25.0" prefWidth="25.0" ripplerFill="#737373">
+                     <graphic>
+                        <ImageView fx:id="buttonEditTaskNameIcon" fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../resources/Icons/plus-round.png" />
                            </image>
                         </ImageView>
                      </graphic>

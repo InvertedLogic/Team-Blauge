@@ -162,7 +162,9 @@ public class GUIController {
 		});
 
 	}
-	
+	/*
+	 * Quasi erweiterter Konstruktor, der in der Main aufgerufen wird, da bspw keylistener nicht im Konstruktor angelegt werden können
+	 */
 	public void initnshit() {
 		//hier können keylistener und sowas initialisiert werden
     	textFieldTaskname.editableProperty().set(false);
@@ -225,6 +227,8 @@ public class GUIController {
 
     }
     
+    Image image = new Image(getClass().getResourceAsStream("save.png"));
+    
     @FXML
     void buttonEditTaskNamePressed(ActionEvent event) {
     	if(textFieldTaskname.editableProperty().get()){
@@ -234,13 +238,6 @@ public class GUIController {
     		 * TODO:
     		 * ändere das icon des buttons zu 'Compose' funktioniert noch nicht
     		 */
-        	File f = new File("/src/resources/Icons/compose.png");
-        	//Image img = new Image(f.toURI().toString(), true);
-        	//buttonEditTaskNameIcon.setImage(img);
-        	System.out.println("Button zu compose.png geaendert");
-        	
-        	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:/src/resources/Icons/compose.png"));
-        	buttonEditTaskName.setGraphic(buttonEditTaskNameIcon2);
         		
     	}
     	else {
@@ -259,16 +256,6 @@ public class GUIController {
 	                     * ändere Buttonicon wieder zu stift funktioniert noch nicht
 	                     * wenn >TAB< gedrueckt waehrend im Textfield soll fokus auf Button gelegt werden
 	                     */ 
-	                	File f = new File("./src/resources/Icons/compose.png");
-	                	Image img = new Image("file:./src/resources/Icons/compose.png");
-	                	buttonEditTaskNameIcon.setImage(img);
-	                	System.out.println("Button zu Compose.png geaendert");
-	                	
-
-	                	System.out.println(f.getAbsolutePath());
-	                	System.out.println(f.toURI().toString());
-	                	
-
 	                	
 	                }
 	            } 
@@ -276,14 +263,24 @@ public class GUIController {
     	
     		textFieldTaskname.editableProperty().set(true);
     		
+    		
+    		//---------------------------------------------------------------------------------------------------
+    		
     		File f = new File("file:\\src\\resources\\Icons\\save.png");
         	//Image img = new Image(f.toURI().toString(), true);
-        	//buttonEditTaskNameIcon.setImage(img);
+        	buttonEditTaskNameIcon.setImage(this.image);
         	System.out.println("Button zu save.png geaendert");
         	
         	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:.\\src\\resources\\Icons\\save.png"));
         	buttonEditTaskName.setGraphic(buttonEditTaskNameIcon2);
     		
+        	
+        	
+        	
+        	
+    		//---------------------------------------------------------------------------------------------------
+
+        	
     		/*
     		 * TODO:
     		 * ändere Icon zu speichern icon
