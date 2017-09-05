@@ -37,6 +37,9 @@
             <CheckMenuItem mnemonicParsing="false" text="A" />
             <CheckMenuItem mnemonicParsing="false" text="B" />
          </items>
+         <font>
+            <Font name="Roboto Light" size="15.0" />
+         </font>
       </MenuButton>
       <ScrollPane layoutX="876.0" layoutY="100.0" prefHeight="620.0" prefWidth="364.0">
         <content>
@@ -146,7 +149,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <JFXButton fx:id="buttonProjectselection" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" onAction="#buttonProjectselectionPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="#737373">
+      <JFXButton fx:id="buttonProjectselection" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" onAction="#buttonProjectselectionPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="#737373">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>
@@ -222,7 +225,7 @@
             <Font name="Roboto Light" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="labelDoing" alignment="CENTER" layoutX="273.0" layoutY="100.0" prefHeight="30.0" prefWidth="271.0" style="-fx-background-color: #888888;" text="Doing">
+      <Label fx:id="labelDoing" alignment="CENTER" layoutX="273.0" layoutY="100.0" prefHeight="31.0" prefWidth="271.0" style="-fx-background-color: #888888;" text="Doing">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font>
