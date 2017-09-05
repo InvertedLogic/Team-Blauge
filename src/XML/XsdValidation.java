@@ -8,22 +8,23 @@ import org.xml.sax.*;
 public class XsdValidation {
 
 	public static void main(String[] args) throws Exception {
-		if (args.length != 2) {
-			System.out.println("Bitte XSD-Schema und XML-Dokument angeben.");
-			return;
-		}
 		Projectlist test = new Projectlist();
 		test.setCount(3);
 		System.out.println(test.getCount());
-		System.out.println(args[0] + " + " + args[1]);
-		XsdValidation.validate("projectlist_schema.xsd", "projectlist.xml");
+		System.out.println();
+		XsdValidation.validate("projectlist");
+		XsdValidation.validate("project");
 	}
 
-	public static void validate(String xsdSchema, String xmlDokument) throws SAXException, IOException {
+	public static void validate(String xmlDokumentWithoutFileEnding) throws SAXException, IOException, FileNotFoundException {
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		Schema schema = schemaFactory.newSchema(new File(xsdSchema));
-		Validator validator = schema.newValidator();
-		validator.setErrorHandler(new XsdValidationLoggingErrorHandler());
-		validator.validate(new StreamSource(new File(xmlDokument)));
+		try {
+			Schema schema = schemaFactory.newSchema(new File("src/XML/schemas/" + xmlDokumentWithoutFileEnding + "_schema.xsd"));
+			Validator validator = schema.newValidator();
+			validator.setErrorHandler(new XsdValidationLoggingErrorHandler());
+			validator.validate(new StreamSource(new File("src/XML/files/" + xmlDokumentWithoutFileEnding + ".xml")));
+		} catch (Exception e) {
+			System.out.println("Fehler: " + e.getMessage());
+		}
 	}
 }
