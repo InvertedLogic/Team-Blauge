@@ -214,7 +214,7 @@ public class GUIController {
 
     @FXML
     void buttonProjectselectionPressed(ActionEvent event) {
-    	main.showProjectList();
+
     }
 
     @FXML
@@ -227,7 +227,7 @@ public class GUIController {
 
     }
     
-    Image image = new Image(getClass().getResourceAsStream("save.png"));
+    //Image image = new Image(getClass().getResourceAsStream("save.png"));
     
     @FXML
     void buttonEditTaskNamePressed(ActionEvent event) {
@@ -264,11 +264,11 @@ public class GUIController {
     		textFieldTaskname.editableProperty().set(true);
     		
     		
-    		//---------------------------------------------------------------------------------------------------
+    		//------IN-WORK-(FIETE)--------------------------------------------------------------------------------------------
     		
-    		File f = new File("file:\\src\\resources\\Icons\\save.png");
+    		//File f = new File("file:\\src\\resources\\Icons\\save.png");
         	//Image img = new Image(f.toURI().toString(), true);
-        	buttonEditTaskNameIcon.setImage(this.image);
+        	//buttonEditTaskNameIcon.setImage(this.image);
         	System.out.println("Button zu save.png geaendert");
         	
         	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:.\\src\\resources\\Icons\\save.png"));
@@ -289,6 +289,7 @@ public class GUIController {
     	}
     }
     void saveEnteredTaskname(String name) {
+    	//Nur zum Testen:
     	textFieldTaskname.setText(name);
     	labelActualAuthor.setText(name);
     }
@@ -296,12 +297,6 @@ public class GUIController {
     
     @FXML
     void buttonNewTaskPressed(ActionEvent event) {
-    	for(int i = 0; i < 10; i++){
-    		Label lbl = new Label();
-    		lbl.setPrefSize(100, 100);
-    		lbl.setStyle("-fx-background-color: white;");
-    		lbl.setText("Ich bin Label " + i);
-    		mansoryPaneToDo.getChildren().add(lbl);
-    	}
+    	labelProjectname.setText("    Neuer Task?");
     }
 }

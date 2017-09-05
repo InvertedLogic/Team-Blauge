@@ -71,6 +71,7 @@ public class LoginController {
                 }
             }
         });
+    	this.textFieldLogInScreenPassword.setVisible(false);
     	//main.showGUI();
     }
     
@@ -91,7 +92,7 @@ public class LoginController {
     
     public void checkLoginData() {
     	main.log("Check Login");
-	    if(textFieldLogInScreenUsername.getText().equals(username)  && textFieldLogInScreenPassword.getText().equals(passwort)) {
+	    if(textFieldLogInScreenUsername.getText().equals(username)) {
 			main.showGUI();
 		}
 	    else {
