@@ -226,24 +226,21 @@
             </ContextMenu>
          </contextMenu>
       </Label>
-      <Label fx:id="labelToDo" alignment="CENTER" layoutY="100.0" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: #969696;" text="To Do">
+      <Label fx:id="labelToDo" alignment="CENTER" layoutY="100.0" prefHeight="30.0" prefWidth="273.0" style="-fx-background-color: #969696;" text="To Do">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="labelDoing" alignment="CENTER" layoutX="277.0" layoutY="100.0" prefHeight="30.0" prefWidth="276.0" style="-fx-background-color: #888888;" text="Doing">
+      <Label fx:id="labelDoing" alignment="CENTER" layoutX="273.0" layoutY="100.0" prefHeight="30.0" prefWidth="271.0" style="-fx-background-color: #888888;" text="Doing">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="labelFinished" alignment="CENTER" layoutX="553.0" layoutY="100.0" prefHeight="30.0" prefWidth="277.0" style="-fx-background-color: #969696;" text="Finished">
+      <Label fx:id="labelFinished" alignment="CENTER" layoutX="544.0" layoutY="100.0" prefHeight="30.0" prefWidth="272.0" style="-fx-background-color: #969696;" text="Finished">
          <font>
             <Font name="Roboto Light" size="15.0" />
          </font>
       </Label>
-      <JFXMasonryPane fx:id="mansoryPaneToDo" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
-      <JFXMasonryPane fx:id="mansoryPaneDoing" layoutX="277.0" layoutY="130.0" prefHeight="590.0" prefWidth="276.0" style="-fx-background-color: #888888;" />
-      <JFXMasonryPane fx:id="mansoryPaneFinished" layoutX="553.0" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
       <JFXButton fx:id="buttonNewTask" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="780.0" layoutY="50.0" onAction="#buttonNewTaskPressed" prefHeight="50.0" prefWidth="50.0" ripplerFill="ORANGE">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
@@ -258,5 +255,16 @@
             <Image url="@../resources/Icons/ios7-custom-back.png" />
          </image>
       </ImageView>
+      <ScrollPane layoutY="130.0" prefHeight="590.0" prefWidth="830.0" style="-fx-background-color: #969696;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="815.0" style="-fx-background-color: #969696;">
+               <children>
+                  <JFXMasonryPane fx:id="mansoryPaneToDo" prefHeight="800.0" prefWidth="272.0" style="-fx-background-color: #969696;" />
+                  <JFXMasonryPane fx:id="mansoryPaneDoing" layoutX="272.0" prefHeight="590.0" prefWidth="271.0" style="-fx-background-color: #888888;" />
+                  <JFXMasonryPane fx:id="mansoryPaneFinished" layoutX="543.0" prefHeight="590.0" prefWidth="272.0" style="-fx-background-color: #969696;" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

@@ -214,7 +214,7 @@ public class GUIController {
 
     @FXML
     void buttonProjectselectionPressed(ActionEvent event) {
-
+    	main.showProjectList();
     }
 
     @FXML
@@ -296,6 +296,12 @@ public class GUIController {
     
     @FXML
     void buttonNewTaskPressed(ActionEvent event) {
-    	labelProjectname.setText("    Neuer Task?");
+    	for(int i = 0; i < 10; i++){
+    		Label lbl = new Label();
+    		lbl.setPrefSize(100, 100);
+    		lbl.setStyle("-fx-background-color: white;");
+    		lbl.setText("Ich bin Label " + i);
+    		mansoryPaneToDo.getChildren().add(lbl);
+    	}
     }
 }
