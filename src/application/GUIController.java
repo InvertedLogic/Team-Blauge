@@ -31,118 +31,118 @@ import javafx.stage.FileChooser;
 
 public class GUIController {
 	@FXML
-	private Label labelProjectname;
+    private Label labelProjectname;
 
-	@FXML
-	private Label labelProjectinformation;
+    @FXML
+    private Label labelProjectinformation;
 
-	@FXML
-	private Label labelUser;
+    @FXML
+    private Label labelUser;
 
-	@FXML
-	private MenuButton menuButtonFilter;
+    @FXML
+    private MenuButton menuButtonFilter;
 
-	@FXML
-	private Label labelTaskname;
+    @FXML
+    private Label labelTaskname;
 
-	@FXML
-	private Label labelAuthor;
+    @FXML
+    private Label labelAuthor;
 
-	@FXML
-	private Label labelStatus;
+    @FXML
+    private Label labelStatus;
 
-	@FXML
-	private Label labelColor;
+    @FXML
+    private Label labelColor;
 
-	@FXML
-	private Label labelDescription;
+    @FXML
+    private Label labelDescription;
 
-	@FXML
-	private Label labelTags;
+    @FXML
+    private Label labelTags;
 
-	@FXML
-	private Label labelActualAuthor;
+    @FXML
+    private Label labelActualAuthor;
 
-	@FXML
-	private Label labelActualStatus;
+    @FXML
+    private Label labelActualStatus;
 
-	@FXML
-	private JFXTextField textFieldTaskname;
+    @FXML
+    private JFXTextField textFieldTaskname;
 
-	@FXML
-	private JFXColorPicker ColorPicker;
+    @FXML
+    private JFXColorPicker ColorPicker;
 
-	@FXML
-	private JFXTextArea textAreaDescription;
+    @FXML
+    private JFXTextArea textAreaDescription;
 
-	@FXML
-	private JFXListView<?> listViewTags;
+    @FXML
+    private JFXListView<?> listViewTags;
 
-	@FXML
-	private Label labelComments;
+    @FXML
+    private Label labelComments;
 
-	@FXML
-	private JFXListView<?> listViewComments;
+    @FXML
+    private JFXListView<?> listViewComments;
 
-	@FXML
-	private JFXTextField textFieldTags;
+    @FXML
+    private JFXTextField textFieldTags;
 
-	@FXML
-	private JFXButton buttonAddTag;
+    @FXML
+    private JFXButton buttonAddTag;
 
-	@FXML
-	private JFXTextField textFieldComments;
+    @FXML
+    private JFXTextField textFieldComments;
 
-	@FXML
-	private JFXButton buttonAddComment;
+    @FXML
+    private JFXButton buttonAddComment;
+    
+    @FXML
+    private JFXButton buttonEditTaskName;
+    
+    @FXML
+    private ImageView buttonEditTaskNameIcon;
 
-	@FXML
-	private JFXButton buttonEditTaskName;
+    @FXML
+    private JFXButton buttonProjectselection;
 
-	@FXML
-	private ImageView buttonEditTaskNameIcon;
+    @FXML
+    private JFXButton buttonLogOut;
 
-	@FXML
-	private JFXButton buttonProjectselection;
+    @FXML
+    private JFXButton buttonProceed;
 
-	@FXML
-	private JFXButton buttonLogOut;
+    @FXML
+    private JFXButton buttonReturn;
 
-	@FXML
-	private JFXButton buttonProceed;
+    @FXML
+    private JFXButton buttonInformation;
 
-	@FXML
-	private JFXButton buttonReturn;
+    @FXML
+    private JFXButton buttonTags;
 
-	@FXML
-	private JFXButton buttonInformation;
+    @FXML
+    private JFXButton buttonComments;
+    
+    @FXML
+    private JFXButton buttonNewTask;
 
-	@FXML
-	private JFXButton buttonTags;
+    @FXML
+    private Label labelToDo;
 
-	@FXML
-	private JFXButton buttonComments;
+    @FXML
+    private Label labelDoing;
 
-	@FXML
-	private JFXButton buttonNewTask;
+    @FXML
+    private Label labelFinished;
 
-	@FXML
-	private Label labelToDo;
+    @FXML
+    private JFXMasonryPane mansoryPaneToDo;
 
-	@FXML
-	private Label labelDoing;
+    @FXML
+    private JFXMasonryPane mansoryPaneDoing;
 
-	@FXML
-	private Label labelFinished;
-
-	@FXML
-	private JFXMasonryPane mansoryPaneToDo;
-
-	@FXML
-	private JFXMasonryPane mansoryPaneDoing;
-
-	@FXML
-	private JFXMasonryPane mansoryPaneFinished;
+    @FXML
+    private JFXMasonryPane mansoryPaneFinished;
 
 	private Main main;
 
@@ -162,125 +162,143 @@ public class GUIController {
 		});
 
 	}
-
+	
 	public void initnshit() {
-		// hier können keylistener und sowas initialisiert werden
-		textFieldTaskname.editableProperty().set(false);
+		//hier können keylistener und sowas initialisiert werden
+    	textFieldTaskname.editableProperty().set(false);
 
+		
 		((Scene) labelProjectname.getScene()).setOnKeyPressed(new EventHandler<KeyEvent>() {
-			@Override
-			public void handle(KeyEvent ke) {
-				if (ke.getCode().equals(KeyCode.ESCAPE)) {
-					main.showLogin();
-				}
-			}
-		});
-
+            @Override
+            public void handle(KeyEvent ke)
+            {
+                if (ke.getCode().equals(KeyCode.ESCAPE))
+                {
+                    main.showLogin();
+                }
+            }
+        });
+		
 	}
-
+	
 	public void setMainApp(Main main) {
 		this.main = main;
 	}
-
+	
 	@FXML
-	void ColorPickerSelectionChanged(ActionEvent event) {
+    void ColorPickerSelectionChanged(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void buttonCommentsPressed(ActionEvent event) {
+    @FXML
+    void buttonCommentsPressed(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void buttonInformationPressed(ActionEvent event) {
+    @FXML
+    void buttonInformationPressed(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void buttonLogOutPressed(ActionEvent event) {
-		main.showLogin();
-	}
+    @FXML
+    void buttonLogOutPressed(ActionEvent event) {
+    	main.showLogin();
+    }
 
-	@FXML
-	void buttonProceedPressed(ActionEvent event) {
+    @FXML
+    void buttonProceedPressed(ActionEvent event) {
 
-	}
+    }
 
-	@FXML
-	void buttonProjectselectionPressed(ActionEvent event) {
-		main.showProjectList();
-	}
+    @FXML
+    void buttonProjectselectionPressed(ActionEvent event) {
 
-	@FXML
-	void buttonReturnPressed(ActionEvent event) {
+    }
 
-	}
+    @FXML
+    void buttonReturnPressed(ActionEvent event) {
 
-	@FXML
-	void buttonTagsPressed(ActionEvent event) {
+    }
 
-	}
+    @FXML
+    void buttonTagsPressed(ActionEvent event) {
 
-	@FXML
-	void buttonEditTaskNamePressed(ActionEvent event) {
-		if (textFieldTaskname.editableProperty().get()) {
-			textFieldTaskname.editableProperty().set(false);
-			saveEnteredTaskname(textFieldTaskname.getText());
-			/*
-			 * TODO: ändere das icon des buttons zu 'Compose' funktioniert noch nicht
-			 */
-			File f = new File("/src/resources/Icons/compose.png");
-			Image img = new Image(f.toURI().toString(), true);
-			buttonEditTaskNameIcon.setImage(img);
-			System.out.println("Button zu compose.png geaendert");
+    }
+    
+    @FXML
+    void buttonEditTaskNamePressed(ActionEvent event) {
+    	if(textFieldTaskname.editableProperty().get()){
+    		textFieldTaskname.editableProperty().set(false);
+        	saveEnteredTaskname(textFieldTaskname.getText());
+    		/*
+    		 * TODO:
+    		 * ändere das icon des buttons zu 'Compose' funktioniert noch nicht
+    		 */
+        	File f = new File("/src/resources/Icons/compose.png");
+        	//Image img = new Image(f.toURI().toString(), true);
+        	//buttonEditTaskNameIcon.setImage(img);
+        	System.out.println("Button zu compose.png geaendert");
+        	
+        	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:/src/resources/Icons/compose.png"));
+        	buttonEditTaskName.setGraphic(buttonEditTaskNameIcon2);
+        		
+    	}
+    	else {
+    		
+    		this.textFieldTaskname.setOnKeyPressed(new EventHandler<KeyEvent>() {
+	            @Override
+	            public void handle(KeyEvent ke)
+	            {
+	                if (ke.getCode().equals(KeyCode.ENTER))
+	                {
+	                	saveEnteredTaskname(textFieldTaskname.getText());
+	                	textFieldTaskname.editableProperty().set(false);
+	                	
+	                    /*
+	                     * TODO:
+	                     * ändere Buttonicon wieder zu stift funktioniert noch nicht
+	                     * wenn >TAB< gedrueckt waehrend im Textfield soll fokus auf Button gelegt werden
+	                     */ 
+	                	File f = new File("./src/resources/Icons/compose.png");
+	                	Image img = new Image("file:./src/resources/Icons/compose.png");
+	                	buttonEditTaskNameIcon.setImage(img);
+	                	System.out.println("Button zu Compose.png geaendert");
+	                	
 
-		} else {
+	                	System.out.println(f.getAbsolutePath());
+	                	System.out.println(f.toURI().toString());
+	                	
 
-			this.textFieldTaskname.setOnKeyPressed(new EventHandler<KeyEvent>() {
-				@Override
-				public void handle(KeyEvent ke) {
-					if (ke.getCode().equals(KeyCode.ENTER)) {
-						saveEnteredTaskname(textFieldTaskname.getText());
-						textFieldTaskname.editableProperty().set(false);
-
-						/*
-						 * TODO: ändere Buttonicon wieder zu stift funktioniert noch nicht wenn >TAB<
-						 * gedrueckt waehrend im Textfield soll fokus auf Button gelegt werden
-						 */
-						File f = new File("/src/resources/Icons/compose.png");
-						Image img = new Image("file:\\src\\resources\\Icons\\compose.png");
-						buttonEditTaskNameIcon.setImage(img);
-						System.out.println("Button zu Compose.png geaendert");
-
-						System.out.println(f.getAbsolutePath());
-						System.out.println(f.toURI().toString());
-
-					}
-				}
-			});
-
-			textFieldTaskname.editableProperty().set(true);
-
-			File f = new File("file:\\src\\resources\\Icons\\save.png");
-			Image img = new Image(f.toURI().toString(), true);
-			buttonEditTaskNameIcon.setImage(img);
-			System.out.println("Button zu save.png geaendert");
-
-			/*
-			 * TODO: ändere Icon zu speichern icon
-			 */
-
-		}
-	}
-
-	void saveEnteredTaskname(String name) {
-		textFieldTaskname.setText(name);
-		labelActualAuthor.setText(name);
-	}
-
-	@FXML
-	void buttonNewTaskPressed(ActionEvent event) {
-		labelProjectname.setText("    Neuer Task?");
-	}
+	                	
+	                }
+	            } 
+	        });
+    	
+    		textFieldTaskname.editableProperty().set(true);
+    		
+    		File f = new File("file:\\src\\resources\\Icons\\save.png");
+        	//Image img = new Image(f.toURI().toString(), true);
+        	//buttonEditTaskNameIcon.setImage(img);
+        	System.out.println("Button zu save.png geaendert");
+        	
+        	ImageView buttonEditTaskNameIcon2 = new ImageView( new Image("file:.\\src\\resources\\Icons\\save.png"));
+        	buttonEditTaskName.setGraphic(buttonEditTaskNameIcon2);
+    		
+    		/*
+    		 * TODO:
+    		 * ändere Icon zu speichern icon
+    		 */
+    		
+    	}
+    }
+    void saveEnteredTaskname(String name) {
+    	textFieldTaskname.setText(name);
+    	labelActualAuthor.setText(name);
+    }
+    
+    
+    @FXML
+    void buttonNewTaskPressed(ActionEvent event) {
+    	labelProjectname.setText("    Neuer Task?");
+    }
 }
