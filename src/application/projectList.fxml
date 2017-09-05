@@ -86,12 +86,12 @@
             <Font size="1.0" />
          </font>
       </JFXButton>
-      <Label layoutY="-3.0" prefHeight="50.0" prefWidth="277.0" style="-fx-background-color: #FFA500;" text="Projektliste">
+      <Label prefHeight="50.0" prefWidth="277.0" style="-fx-background-color: #FFA500;" text="Projektliste">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <JFXButton fx:id="buttonBack" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" layoutY="-3.0" maxHeight="50.0" minHeight="50.0" onAction="#buttonBackPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="#737373" text="Button">
+      <JFXButton fx:id="buttonBack" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" maxHeight="58.0" minHeight="50.0" onAction="#buttonBackPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="#737373" text="Button">
          <graphic>
             <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -103,5 +103,6 @@
             <Font size="1.0" />
          </font>
       </JFXButton>
+      <Label layoutX="277.0" prefHeight="50.0" prefWidth="599.0" style="-fx-background-color: #969696;" />
    </children>
 </AnchorPane>

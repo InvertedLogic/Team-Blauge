@@ -53,6 +53,7 @@ public class Main extends Application {
 			GUIController controller = loader.getController();
 			controller.setMainApp(this);
 			root.setCenter(GUI);
+			controller.initnshit();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -67,6 +68,7 @@ public class Main extends Application {
 			LoginController controller = loader.getController();
 			controller.setMainApp(this);
 			root.setCenter(GUI);
+			controller.initnshit();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -80,6 +82,7 @@ public class Main extends Application {
 			ProjectListController controller = loader.getController();
 			controller.setMainApp(this);
 			root.setCenter(GUI);
+			controller.init();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
