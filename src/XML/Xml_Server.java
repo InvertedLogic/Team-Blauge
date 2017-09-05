@@ -51,7 +51,7 @@ public class Xml_Server {
 	{
 
 		
-				Projectlist data = unmarshalFromFile("server_projectlist.xml");
+				Projectlist data = unmarshalFromFile("projectlist.xml");
 				
 				data.addProjectOverview(pr);
 				
@@ -72,7 +72,7 @@ public class Xml_Server {
 	public static ProjectOverview searchinXML(String name) throws JAXBException, XMLStreamException
 	{
 		XMLInputFactory xif = XMLInputFactory.newFactory();
-        StreamSource xml = new StreamSource("server_projectlist.xml");
+        StreamSource xml = new StreamSource("projectlist.xml");
         XMLStreamReader xsr = xif.createXMLStreamReader(xml);
 
         
@@ -134,7 +134,7 @@ public class Xml_Server {
 	
 	private static void deleteEntry(String deleteword) throws JAXBException
 	{
-		Projectlist data = unmarshalFromFile("server_projectlist.xml");
+		Projectlist data = unmarshalFromFile("projectlist.xml");
 		
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) {
@@ -143,7 +143,7 @@ public class Xml_Server {
 		    }
 		}
 		
-		marshalToFile(data, "server_projectlist.xml");
+		marshalToFile(data, "projectlist.xml");
 		
 	}
 	
@@ -155,7 +155,7 @@ public class Xml_Server {
 		pro.setLastmod(time);
 		String delete = pro.getName();
 		
-		Projectlist data = unmarshalFromFile("server_projectlist.xml");
+		Projectlist data = unmarshalFromFile("projectlist.xml");
 		
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) {
@@ -165,14 +165,14 @@ public class Xml_Server {
 		}
 		data.getProjectOverview().add(pro);
 		
-		marshalToFile(data, "server_projectlist.xml");
+		marshalToFile(data, "projectlist.xml");
 		
 	}
 	
 	public static List<Project> checkProjectListandgiveProjectsback(String userName) throws JAXBException
 	{
 		ArrayList<Project> proList = new ArrayList<Project>();
-		Projectlist data = unmarshalFromFile("server_projectlist.xml");
+		Projectlist data = unmarshalFromFile("projectlist.xml");
 		
 		ProjectOverview pOver = new ProjectOverview("Testprojekt", "Das ist ein Testprojekt", "blabliblubkey");
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
