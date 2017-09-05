@@ -2,6 +2,9 @@ package test.model;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -87,5 +90,104 @@ public class Test_Task {
 		task.setLetzterNutzer(user2);
 		assertEquals(user2, task.getLetzterNutzer());
 	}
-		
+	
+	@Test
+	public void testTaskNachVorne(){
+		Status status1 = new Status("toDo");
+		Status status2 = new Status("doing");
+		Status status3 = new Status("finished");
+		task.setStatus(status1);
+		status1.setNachfolger(status2);
+		status2.setNachfolger(status3);
+		task.taskNachVorne();
+		assertEquals(status2, task.getStatus());
+		task.taskNachVorne();
+		assertEquals(status3, task.getStatus());
+		/*
+		 * ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		 * String err = "ERROR: Task already in last status.";
+		 * task.taskNachVorne();
+		 * assertTrue(err == outContent.toString());
+		 */		
+	}
+	
+	@Test
+	public void testTaskNachHinten(){
+		Status status1 = new Status("toDo");
+		Status status2 = new Status("doing");
+		Status status3 = new Status("finished");
+		task.setStatus(status3);
+		status3.setVorgaenger(status2);
+		status2.setVorgaenger(status1);
+		task.taskNachHinten();
+		assertEquals(status2, task.getStatus());
+		task.taskNachHinten();
+		assertEquals(status1, task.getStatus());
+		/*
+		 * ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		 * String err = "ERROR: Task already in first status.";
+		 * task.taskNachHinten();
+		 * assertTrue(err == outContent.toString());
+		 */		
+	}
+	
+	@Test
+	public void testGetSingleTagNr(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		assertEquals("tag1", task.getSingleTag(0));
+		/*
+		 *	Error Fall muss noch rein 
+		 */
+	}
+	
+	@Test
+	public void testGetSingleTagBezeichnung(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		assertEquals("tag2", task.getSingleTag("tag2"));
+		/*
+		 *	Error Fall muss noch rein 
+		 */
+	}
+	
+	@Test
+	public void testLoescheTagNr(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		task.loescheTag(1);
+		assertFalse(task.getTags().contains("tag2"));
+		/*
+		 *	Error Fall muss noch rein 
+		 */
+	}
+	
+	@Test
+	public void testLoescheTagBezeichnung(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		task.loescheTag("tag1");
+		assertFalse(task.getTags().contains("tag1"));
+		/*
+		 *	Error Fall muss noch rein 
+		 */
+	}
+	
+	@Test
+	public void testErstelleTag(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		task.getTags().add("tag3");
+		assertTrue(task.getTags().contains("tag3"));
+	}
 }
