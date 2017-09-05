@@ -39,8 +39,16 @@ public class ProjectListController {
 
 	@FXML
 	private JFXButton buttonBack;
-	
+
 	private Main main;
+
+	public ProjectListController() {
+
+	}
+
+	public void init() {
+
+	}
 
 	public void setMainApp(Main main) {
 		this.main = main;

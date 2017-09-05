@@ -235,7 +235,7 @@
       <JFXMasonryPane fx:id="mansoryPaneToDo" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
       <JFXMasonryPane fx:id="mansoryPaneDoing" layoutX="277.0" layoutY="130.0" prefHeight="590.0" prefWidth="276.0" style="-fx-background-color: #888888;" />
       <JFXMasonryPane fx:id="mansoryPaneFinished" layoutX="553.0" layoutY="130.0" prefHeight="590.0" prefWidth="277.0" style="-fx-background-color: #969696;" />
-      <JFXButton fx:id="buttonNewTask" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="780.0" layoutY="50.0" onAction="#buttonNewTaskPressed" prefHeight="50.0" prefWidth="50.0" ripplerFill="ORANGE">
+      <JFXButton fx:id="buttonNewTask" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="780.0" layoutY="50.0" onAction="#buttonNewTaskPressed" prefHeight="50.0" prefWidth="50.0" ripplerFill="ORANGE">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0">
                <image>

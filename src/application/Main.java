@@ -80,6 +80,7 @@ public class Main extends Application {
 			ProjectListController controller = loader.getController();
 			controller.setMainApp(this);
 			root.setCenter(GUI);
+			controller.init();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
