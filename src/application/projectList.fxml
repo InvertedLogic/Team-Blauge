@@ -14,6 +14,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1240.0" style="-fx-background-color: #737373;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProjectListController">
    <children>
+      <Label fx:id="labelProjectList" prefHeight="50.0" prefWidth="277.0" style="-fx-background-color: #FFA500;" text="Projektliste">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
       <AnchorPane layoutX="876.0">
          <children>
             <Label fx:id="labelUser" prefHeight="50.0" prefWidth="364.0" style="-fx-background-color: #cdcdcd;" text="Benutzer">
@@ -104,11 +109,6 @@
             <Font size="1.0" />
          </font>
       </JFXButton>
-      <Label prefHeight="50.0" prefWidth="277.0" style="-fx-background-color: #FFA500;" text="Projektliste">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
       <JFXButton fx:id="buttonBack" contentDisplay="GRAPHIC_ONLY" layoutX="207.0" maxHeight="58.0" minHeight="50.0" onAction="#buttonBackPressed" prefHeight="50.0" prefWidth="70.0" ripplerFill="#737373" text="Button">
          <graphic>
             <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">

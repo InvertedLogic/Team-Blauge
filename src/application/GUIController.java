@@ -171,6 +171,7 @@ public class GUIController {
             {
                 if (ke.getCode().equals(KeyCode.ESCAPE))
                 {
+                	buttonLogOutPressed(null);
                     main.showLogin();
                 }
             }

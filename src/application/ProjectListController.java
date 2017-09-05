@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXTreeTableView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -60,6 +61,9 @@ public class ProjectListController {
 
 	@FXML
 	private JFXButton buttonBack;
+	
+	@FXML
+	private Label labelProjectList;
 
 	private Main main;
 
@@ -70,6 +74,17 @@ public class ProjectListController {
 	public void init() {
 		textFieldProjectName.editableProperty().set(false);
     	textAreaProjectDescription.editableProperty().set(false);
+    	
+    	((Scene) labelProjectList.getScene()).setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke)
+            {
+                if (ke.getCode().equals(KeyCode.ESCAPE))
+                {
+                    main.showGUI();
+                }
+            }
+        });
 	}
 
 	public void setMainApp(Main main) {
