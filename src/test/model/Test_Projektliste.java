@@ -29,12 +29,12 @@ public class Test_Projektliste {
 	}
 	
 	@Test
-	public void getCounterTest(){
+	public void testGetCounter(){
 		assertEquals(1, testProjektliste.getCounter());
 	}
 	
 	@Test
-	public void getListOfProjektTest(){
+	public void testGetListOfProjekt(){
 		assertTrue(testProjektliste.getListOfProjekt().contains(pro1));
 		assertTrue(testProjektliste.getListOfProjekt().contains(pro2));
 	}
