@@ -29,10 +29,8 @@ import com.sun.xml.internal.ws.util.Pool.Unmarshaller;
 import XML.Projectlist.ProjectOverview;
 import XML.Projectlist.ProjectOverview.Userlist;
 import XML.Projectlist.ProjectOverview.Userlist.User;
-import XML.Projectlist.ProjectOverview;
-import model.Datum;
 
-@SuppressWarnings("deprecation")
+
 public class Xml_Server {
 	
 	
@@ -49,15 +47,21 @@ public class Xml_Server {
 	      }
 	   }
 
-	public static void addtoprojectList(ProjectOverview pr)
+	public static void addtoprojectList(ProjectOverview pr) throws JAXBException
 	{
 
+		
+				Projectlist data = unmarshalFromFile("server_projectlist.xml");
+				
+				data.addProjectOverview(pr);
+				
+				
 		    try {
 		        JAXBContext jc = JAXBContext.newInstance(Project.class);
 		        javax.xml.bind.Marshaller marshaller = jc.createMarshaller();
 		        marshaller.setProperty(marshaller.JAXB_FORMATTED_OUTPUT,
 		                Boolean.TRUE);
-		        File XMLfile = new File("server_projectlist.xml");
+		        File XMLfile = new File(pr.getProjectname()+".xml");
 		        marshaller.marshal(pr, XMLfile);
 		    } catch (JAXBException e) {
 		        e.printStackTrace();

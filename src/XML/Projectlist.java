@@ -8,6 +8,8 @@
 
 package XML;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -19,6 +21,8 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 
 
 /**
@@ -212,8 +216,11 @@ public class Projectlist {
         protected String name;
 
         ProjectOverview(String projectname, String description, String key) {
-        	this.setProjectname(projectname);
-        	
+        	this.projectname=projectname;
+        	this.description=description;
+        	this.key=key;
+        	ZonedDateTime lastmodtemp = ZonedDateTime.now(ZoneId.of("Europe/Paris"));
+        	this.lastmod=XMLGregorianCalendar.class.cast(lastmodtemp);
         }
         
         /**
