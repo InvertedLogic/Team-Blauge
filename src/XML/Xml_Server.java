@@ -172,7 +172,7 @@ public class Xml_Server {
 	public static List<Project> checkProjectListandgiveProjectsback(String userName) throws JAXBException
 	{
 		ArrayList<Project> proList = new ArrayList<Project>();
-		Projectlist data = unmarshalFromFile("server_projectlist.xml");
+		Projectlist data = unmarshalFromFile("projectlist.xml");
 		
 		ProjectOverview pOver = new ProjectOverview("Testprojekt", "Das ist ein Testprojekt", "blabliblubkey");
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
