@@ -405,6 +405,13 @@ public class Projectlist {
             protected List<Projectlist.ProjectOverview.Userlist.User> user;
             @XmlAttribute(name = "count", required = true)
             protected int count;
+            
+            public Userlist(List<Projectlist.ProjectOverview.Userlist.User> Uuser, int Count)
+            {
+            	this.user = Uuser;
+            	this.count = Count;
+            	
+            }
 
             /**
              * Gets the value of the user property.
@@ -479,6 +486,12 @@ public class Projectlist {
                 protected String value;
                 @XmlAttribute(name = "isAdmin", required = true)
                 protected boolean isAdmin;
+                
+                public User(String Value, boolean ISadmin)
+                {
+                	this.value = Value;
+                	this.isAdmin  = ISadmin;
+                }
 
                 /**
                  * Ruft den Wert der value-Eigenschaft ab.

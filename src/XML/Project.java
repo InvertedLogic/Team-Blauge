@@ -8,8 +8,12 @@
 
 package XML;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.print.attribute.standard.DateTimeAtCompleted;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -111,6 +115,19 @@ public class Project {
     @XmlAttribute(name = "ID")
     protected Integer id;
 
+    
+    public Project(String Projectname, String Creator, Tasklist Taskll, Statuslist Statusll, Integer Id)
+    {
+    	this.projectname = Projectname;
+    	this.creator = Creator;
+    	this.tasklist = Taskll;
+    	this.statuslist = Statusll;
+    	this.id = Id;
+    	ZonedDateTime lastmodtemp = ZonedDateTime.now(ZoneId.of("Europe/Paris"));
+    	this.lastmod=XMLGregorianCalendar.class.cast(lastmodtemp);
+    	this.createdOn = XMLGregorianCalendar.class.cast(lastmodtemp);
+    	
+    }
     /**
      * Ruft den Wert der projectname-Eigenschaft ab.
      * 
@@ -310,6 +327,12 @@ public class Project {
         protected List<String> status;
         @XmlAttribute(name = "length")
         protected Integer length;
+        
+        public Statuslist(List<String> Status, Integer Length)
+        {
+        	this.status = Status;
+        	this.length = Length;
+        }
 
         /**
          * Gets the value of the status property.
@@ -412,6 +435,13 @@ public class Project {
         protected Project.Tasklist.Task task;
         @XmlAttribute(name = "count")
         protected Integer count;
+        
+        public Tasklist(Task Ttask, Integer Count)
+        {
+        	this.task = Ttask;
+        	this.count = Count;
+        	
+        }
 
         /**
          * Ruft den Wert der task-Eigenschaft ab.
@@ -508,6 +538,17 @@ public class Project {
             protected int color;
             @XmlAttribute(name = "ID")
             protected Integer id;
+            
+            public Task(String Taskname, String Statusname, String Comment, int Color, Integer Id)
+            {
+            	this.taskname = Taskname;
+            	this.statusname = Statusname;
+            	this.comment = Comment;
+            	this.color = Color;
+            	this.id = Id;
+            	ZonedDateTime lastmodtemp = ZonedDateTime.now(ZoneId.of("Europe/Paris"));
+            	this.lastmod=XMLGregorianCalendar.class.cast(lastmodtemp);
+            }
 
             /**
              * Ruft den Wert der taskname-Eigenschaft ab.
