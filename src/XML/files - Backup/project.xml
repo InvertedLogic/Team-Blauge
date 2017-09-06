@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project ID="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tasklist_schema.xsd">
+  <projectname>projectname</projectname>
+  <creator>creator</creator>
+  <created_on>2001-12-31T12:00:00</created_on>
+  <lastmod>2001-12-31T12:00:00</lastmod>
+  <tasklist count="0">
+    <task ID="0">
+      <taskname>taskname</taskname>
+      <statusname>statusname</statusname>
+      <lastmod>2001-12-31T12:00:00</lastmod>
+      <comment>comment</comment>
+      <color>0</color>
+    </task>
+  </tasklist>
+  <statuslist length="0">
+    <status>status</status>
+    <status>status</status>
+    <status>status</status>
+  </statuslist>
+</project>

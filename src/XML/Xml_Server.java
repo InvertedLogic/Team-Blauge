@@ -225,11 +225,6 @@ public class Xml_Server {
 	    
 	    userlist = pr.getUserlist();
 	    userlist.getUser().add(us);
-	    
-	    
-
-
-		
 	}
 	 
 	

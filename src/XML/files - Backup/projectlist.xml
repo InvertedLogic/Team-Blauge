@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectlist count="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="server_projectlist_schema.xsd">
+  <projectOverview ID="2">
+    <projectname>projectname</projectname>
+    <lastmod>2001-12-31T12:00:00</lastmod>
+    <description>description</description>
+    <key>key</key>
+    <userlist count="0">
+      <user Admin="true">user</user>
+    </userlist>
+  </projectOverview>
+    <projectOverview ID="2">
+    <projectname>projectname</projectname>
+    <lastmod>2001-12-31T12:00:00</lastmod>
+    <description>description</description>
+    <key>key</key>
+    <userlist count="0">
+      <user Admin="true">user</user>
+    </userlist>
+  </projectOverview>
+</projectlist>
