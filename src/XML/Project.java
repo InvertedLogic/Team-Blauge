@@ -432,11 +432,12 @@ public class Project {
     public static class Tasklist {
 
         @XmlElement(required = true)
-        protected Project.Tasklist.Task task;
+        protected List<project.Tasklist.Task> task;
+       // protected Project.Tasklist.Task task;
         @XmlAttribute(name = "count")
         protected Integer count;
         
-        public Tasklist(Task Ttask, Integer Count)
+        public Tasklist(List<project.Tasklist.Task> Ttask, Integer Count)
         {
         	this.task = Ttask;
         	this.count = Count;

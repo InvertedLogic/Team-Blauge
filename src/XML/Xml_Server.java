@@ -56,13 +56,13 @@ public class Xml_Server {
 		    }
 		    
 
-			Projectlist data = unmarshalFromFile("projectlist.xml");
+			Projectlist data = unmarshalFromFile("src/XML/files/" + "projectlist.xml");
 			
 			ProjectOverview over = new ProjectOverview(pr.getProjectname(), comment, null);
 			
 			data.addProjectOverview(over);
 			
-			marshalToFile(data, "projectlist.xml");
+			marshalToFile(data, "src/XML/files/" + "projectlist.xml");
 
 		
 	}
@@ -70,7 +70,7 @@ public class Xml_Server {
 	public static ProjectOverview searchinXML(String name) throws JAXBException, XMLStreamException
 	{
 		XMLInputFactory xif = XMLInputFactory.newFactory();
-        StreamSource xml = new StreamSource("projectlist.xml");
+        StreamSource xml = new StreamSource("src/XML/files/" + "projectlist.xml");
         XMLStreamReader xsr = xif.createXMLStreamReader(xml);
 
         
@@ -134,7 +134,7 @@ public class Xml_Server {
 	
 	private static void deleteEntry(String deleteword) throws JAXBException
 	{
-		Projectlist data = unmarshalFromFile("projectlist.xml");
+		Projectlist data = unmarshalFromFile("src/XML/files/" + "projectlist.xml");
 		
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) {
@@ -143,7 +143,7 @@ public class Xml_Server {
 		    }
 		}
 		
-		marshalToFile(data, "projectlist.xml");
+		marshalToFile(data, "src/XML/files/" + "projectlist.xml");
 		
 	}
 	
@@ -155,7 +155,7 @@ public class Xml_Server {
 		pro.setLastmod(time);
 		String delete = pro.getName();
 		
-		Projectlist data = unmarshalFromFile("projectlist.xml");
+		Projectlist data = unmarshalFromFile("src/XML/files/" + "projectlist.xml");
 		
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
 		while (iterator.hasNext()) {
@@ -165,14 +165,14 @@ public class Xml_Server {
 		}
 		data.getProjectOverview().add(pro);
 		
-		marshalToFile(data, "projectlist.xml");
+		marshalToFile(data, "src/XML/files/" + "projectlist.xml");
 		
 	}
 	
 	public static List<Project> checkProjectListandgiveProjectsback(String userName) throws JAXBException
 	{
 		ArrayList<Project> proList = new ArrayList<Project>();
-		Projectlist data = unmarshalFromFile("projectlist.xml");
+		Projectlist data = unmarshalFromFile("src/XML/files/" + "projectlist.xml");
 		
 		ProjectOverview pOver = new ProjectOverview("Testprojekt", "Das ist ein Testprojekt", "blabliblubkey");
 		Iterator<ProjectOverview> iterator = data.getProjectOverview().iterator();
@@ -188,7 +188,7 @@ public class Xml_Server {
 			{
 				if(userName.equals(ite.next().getValue()))
 				{
-					Project pro = unmarshalFromFileProject(iterator.next().getProjectname().toString() + ".xml");
+					Project pro = unmarshalFromFileProject("src/XML/files/" + iterator.next().getProjectname().toString() + ".xml");
 					proList.add(pro);
 					
 		
@@ -207,13 +207,29 @@ public class Xml_Server {
 	
 	public static void main(String[] args) throws Exception 
 	{
-		Task task = new Task("dumm gucken", "todo", "dumme sau", 0, 123);
+		Task task1 = new Task("dumm gucken", "todo", "dumme sau", 0, 1223);
+		Task task2 = new Task("dumm gucken2", "todo", "dumme sau", 0, 1323);
+		Task task3 = new Task("dumm gucken3", "todo", "dumme sau", 0, 1423);
+		
+		List<project.Tasklist.Task> task = new List<project.Tasklist.Task>();
+
+		List<String> status = List<String>();
+		status.add("todo");
+		status.add("done");
+		status.add("fin");
 		
 		
+		task.add(task1);
+		task.add(task2);
+		task.add(task3);
 		
-		Tasklist tasklist = new Tasklist()
+		Tasklist tasklist = new Tasklist(task, task.length());
 				
-		Project pro = new Project(null, null, null, null, null)
+		Project pro = new Project("arschlochmodus 1", "Sauron", tasklist,  status, 12345);
+		
+		addtoprojectList(Project pro, "gib gas");
+		
+		/*
 		
 		User us = new User();
 		us.setIsAdmin(false);
@@ -229,6 +245,7 @@ public class Xml_Server {
 	    
 	    userlist = pr.getUserlist();
 	    userlist.getUser().add(us);
+	    */
 	}
 	 
 	
