@@ -3,6 +3,7 @@ package test.model;
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -129,5 +130,64 @@ public class Test_Task {
 		 * assertTrue(err == outContent.toString());
 		 */		
 	}
-		
+	
+	@Test
+	public void testGetSingleTagNr(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		assertEquals("tag1", task.getSingleTag(0));
+		/*
+		 *	Error Fall muss noch rein 
+		 */
+	}
+	
+	@Test
+	public void testGetSingleTagBezeichnung(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		assertEquals("tag2", task.getSingleTag("tag2"));
+		/*
+		 *	Error Fall muss noch rein 
+		 */
+	}
+	
+	@Test
+	public void testLoescheTagNr(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		task.loescheTag(1);
+		assertFalse(task.getTags().contains("tag2"));
+		/*
+		 *	Error Fall muss noch rein 
+		 */
+	}
+	
+	@Test
+	public void testLoescheTagBezeichnung(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		task.loescheTag("tag1");
+		assertFalse(task.getTags().contains("tag1"));
+		/*
+		 *	Error Fall muss noch rein 
+		 */
+	}
+	
+	@Test
+	public void testErstelleTag(){
+		ArrayList<String> tags = new ArrayList<String>();
+		tags.add("tag1");
+		tags.add("tag2");
+		task.setTags(tags);
+		task.getTags().add("tag3");
+		assertTrue(task.getTags().contains("tag3"));
+	}
 }
