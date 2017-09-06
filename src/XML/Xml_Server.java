@@ -207,8 +207,12 @@ public class Xml_Server {
 	
 	public static void main(String[] args) throws Exception 
 	{
-		Task task = new Task(null, null, null, 0, null)
+		Task task = new Task("dumm gucken", "todo", "dumme sau", 0, 123);
 		
+		
+		
+		Tasklist tasklist = new Tasklist()
+				
 		Project pro = new Project(null, null, null, null, null)
 		
 		User us = new User();
