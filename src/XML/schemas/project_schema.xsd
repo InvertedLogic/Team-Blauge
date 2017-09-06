@@ -12,7 +12,7 @@
             <xs:sequence>
               <xs:element name="task">
                 <xs:complexType>
-                  <xs:sequence>
+                  <xs:sequence minOccurs="0">
                     <xs:element type="xs:string" name="taskname"/>
                     <xs:element type="xs:string" name="statusname"/>
                     <xs:element type="xs:dateTime" name="lastmod"/>
